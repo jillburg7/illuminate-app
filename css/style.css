@@ -1,0 +1,32 @@
+.main-section {
+	padding-top: 20px;
+}
+
+textarea {
+	min-height: 64px;
+}
+
+.question-panel {
+	padding: 0px 5px;
+}
+
+.question-panel .button {
+	padding: 8px 15px;
+	margin-bottom: 0px;
+}
+
+.question-panel .button:first-child {
+	max-width: 60px;
+}
+
+.question-panel .button:last-child {
+	float: right;
+}
+
+.title > a{
+	color: #FFF;
+}
+
+.tabs dd{
+	border: 1px solid #D6D6D6;
+}
