@@ -23,7 +23,7 @@
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <li class="name">
-            <h1><a href="#">Illuminate</a></h1>
+            <h1><a href="dashboard.html">Illuminate</a></h1>
           </li>
           <li class="toggle-topbar">
             <a href="#">
@@ -35,60 +35,13 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><label>Action Options</label></li>
-            <li><a href="#">Ask a Question</a></li>
-            <li><a href="#">View Notification History</a></li>
-            <li><a href="#">Back to Dashboard</a></li>
+            <li></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="show-for-small-only"><a href="#" data-reveal-id="myModal" data-reveal>Ask a Question</a></li>
+            <!-- <li><a href="#">View Notification History</a></li> -->
           </ul>
         </section>
       </nav>
-
-    <!-- Top navigation bar -->
-      <!-- <nav class="tab-bar">
-        <section class="left-small">
-          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-          <a class="left-off-canvas-toggle " >
-            <span><i class="fi-list"></i></span>
-          </a>
-        </section> -->
-
-        <!-- <section class="middle tab-bar-section">
-          <h1 class="title">
-            <a href="dashboard.html">
-              Illuminate
-            </a>
-          </h1>
-        </section>
-
-        <section class="show-for-small-only right-small">
-          <a class="right-off-canvas-toggle " >
-            <!-- <span><i class="fi-plus"></i></span>
-            <span><i class="fi-lightbulb"></i></span>
-          </a>
-        </section>
-      </nav> -->
-
-      <!-- Left Nav Menu -->
-
-<!--       <aside class="left-off-canvas-menu">
-        <ul class="off-canvas-list">
-          <li><label>Illuminate</label></li>
-          <li><a href="#">Course Dashboard</a></li>
-          <li><a href="#">Course Dashboard</a></li>
-          <li><a href="#">Course Dashboard</a></li>
-        </ul>
-      </aside> -->
-
-      <!-- Right Nav Menu -->
-
-<!--       <aside class="show-for-small-only right-off-canvas-menu">
-        <ul class="off-canvas-list">
-          <li><label>Action Options</label></li>
-          <li><a href="#">Ask a Question</a></li>
-          <li><a href="#">View Notification History</a></li>
-          <li><a href="#">Back to Dashboard</a></li>
-        </ul>
-      </aside> -->
 
   <!---------- CONTENT STARTS HERE ! ---------->
 
@@ -141,11 +94,24 @@
                 <div class="small-12 large-12 columns">
                   <label>Notes</label>
                   <textarea placeholder="Enter notes here..."></textarea>
-                  <a href="#" class="small radius button">Save</a>
+                  <a href="lecture.html" class="small radius button">Save</a>
                 </div>
               </div>
             </form>
           </div>
+
+        <!-- Modal fly-in/pop-up thingy-->
+          <div id="myModal" class="reveal-modal" data-reveal>
+            <form>
+              <h4>Ask a Question!</h4>
+              <textarea placeholder="Enter question here..."></textarea>
+              <a href="lecture.html" class="small radius button">Clear</a>
+              <a href="lecture.html" class="small radius button">Submit</a>
+            </form>
+            <a class="close-reveal-modal">&#215;</a>
+          </div>
+        <!-- End Modal fly-in/pop-up thingy-->
+
           <div class="hide-for-small medium-3 large-3 columns question-panel">
             <div class="panel">
               <form>
@@ -153,8 +119,8 @@
                   <div class="large-12 columns">
                     <h4>Ask a Question?</h4>
                     <textarea placeholder="Enter question here..."></textarea>
-                    <a href="#" class="small radius button">Clear</a>
-                    <a href="#" class="small radius button">Submit</a>
+                    <a href="lecture.html" class="small radius button">Clear</a>
+                    <a href="lecture.html" class="small radius button">Submit</a>
                   </div>
                 </div>
               </form>

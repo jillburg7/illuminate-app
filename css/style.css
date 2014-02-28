@@ -27,6 +27,24 @@ textarea {
 	color: #FFF;
 }
 
+#panel2-1 {
+	padding-right: 15px;
+}
+
+#panel2-1 img {
+	margin-bottom: 10px;
+}
+
+#panel2-1 {
+	font-size: .80rem;
+	line-height: 1.2;
+}
+
+.lecture-desc p { 
+	font-size: .85rem;
+	line-height: 1.3;
+}
+
 .tabs dd{
 	border: 1px solid #D6D6D6;
 }
@@ -35,6 +53,11 @@ textarea {
 	padding: 10px 12px;
 /*	padding-right: 16px;
 	padding-left: 16px;*/
+}
+
+.accordion .content {
+	font-size: 0.95rem;
+	line-height: 1.2;
 }
 
 i {
@@ -47,8 +70,8 @@ i {
 }
 
 .fi-lightbulb, .fi-comment-quotes {
-	/*font-size: 24px;
-	padding: 0px 6px;*/
+	font-size: 24px;
+	padding: 0px 6px;
 	padding-left: 7px;
 }
 

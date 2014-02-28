@@ -19,60 +19,81 @@
     <div class="inner-wrap">
 
   <!----------  Top Nav Bar  ---------->
-
-      <nav class="tab-bar">
-        <section class="left-small">
-          <!-- <a class="left-off-canvas-toggle menu-icon" ><span></span></a> -->
-          <a class="left-off-canvas-toggle" href="#">
-            <i class="fi-list"></i><span></span>
-          </a>
-        </section>
-
-        <section class="middle tab-bar-section">
-          <h1 class="title">
-            <a href="dashboard.html">
-              Illuminate
+  
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="dashboard.html">Illuminate</a></h1>
+          </li>
+          <li class="toggle-topbar">
+            <a href="#">
+              <i class="fi-comment-quotes"></i>
             </a>
-          </h1>
-        </section>
+          </li>
+        </ul>
 
-        <section class="show-for-small-only right-small">
-          <a class="right-off-canvas-toggle" href="#">
-            <!-- <span><i class="fi-plus"></i></span> -->
-            <i class="fi-comment-quotes"></i><span></span>
-          </a>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" data-reveal-id="myModal" data-reveal>Start a Quiz</a></li>
+            <li><a href="#" class="hide-for-large-only right-off-canvas-toggle">View Questions</a></li>
+          </ul>
         </section>
       </nav>
 
-      <!-- Left Nav Menu -->
-
-      <aside class="left-off-canvas-menu">
-        <ul class="off-canvas-list">
-          <li><label>Illuminate</label></li>
-          <li><a href="#">Course Dashboard</a></li>
-          <li><a href="#">Course Dashboard</a></li>
-          <li><a href="#">Course Dashboard</a></li>
-        </ul>
-      </aside>
-
-      <!-- Right Nav Menu -->
-
-      <aside class="show-for-small-only right-off-canvas-menu">
-        <ul class="off-canvas-list">
+    <!-- Right Nav Menu -->
+      <aside class="right-off-canvas-menu">
+        <dl class="accordion off-canvas-list" data-accordion>
+          <dd>
+            <a href="#panel1">Question: ...?</a>
+            <div id="panel1" class="content active">
+              Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel2">Question: ...?</a>
+            <div id="panel2" class="content">
+              Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+            </div>
+          </dd>
+          <dd>
+            <a href="#panel3">Question: ...?</a>
+            <div id="panel3" class="content">
+              Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+            </div>
+          </dd>
+        </dl>
+        <!-- <ul class="off-canvas-list">
           <li><label>Students' Questions</label></li>
           <li><a href="#">Question: ...?</a></li>
           <li><a href="#">Question: ...?</a></li>
           <li><a href="#">Question: ...?</a></li>
           <li><a href="#">Question: ...?</a></li>
-        </ul>
+        </ul> -->
       </aside>
+    <!-- End Right Nav Menu -->
+    <a class="exit-off-canvas">
 
   <!---------- CONTENT STARTS HERE ! ---------->
+
+    <!-- Modal fly-in/pop-up thingy-->
+      <div id="myModal" class="reveal-modal medium" data-reveal>
+        <form>
+          <h4>Select a from predined quizzes:</h4>
+          <p><a href="lecture.html">Quiz XXX</a></p>
+          <p><a href="lecture.html">Quiz XXX</a></p>
+          <p><a href="lecture.html">Quiz XXX</a></p>
+        </form>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+    <!-- End Modal fly-in/pop-up thingy-->
 
       <section class="main-section">
         <!-- content goes here -->
         <div class="row">
-          <div class="small-12 medium-9 large-9 columns">
+          <div class="small-12 medium-12 large-9 columns">
        
           <!-- Desktop Slider -->
             <div class="hide-for-small">
@@ -102,7 +123,6 @@
             </div>
           <!-- End Desktop Slider -->
        
-       
           <!-- Mobile Header -->
             <div class="row">
               <div class="small-12 show-for-small"><br>
@@ -118,36 +138,34 @@
                 <div class="small-12 large-12 columns">
                   <label>Notes</label>
                   <textarea placeholder="Enter notes here..."></textarea>
-                  <a href="#" class="small radius button">Save</a>
+                  <a href="lecture.html" class="small radius button">Save</a>
                 </div>
               </div>
             </form>
           </div>
-          <div class="hide-for-small medium-3 large-3 columns question-panel">
+          <div class="show-for-large-only large-3 columns question-panel">
             <div class="panel">
-              <form>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <h4>Ask a Question!</h4>
-                    <textarea placeholder="Enter question here..."></textarea>
-                    <a href="#" class="small radius button">Clear</a>
-                    <a href="#" class="small radius button">Submit</a>
+              <h4>Incoming Questions</h4>
+              <dl class="accordion" data-accordion>
+                <dd>
+                  <a href="#panel1">Question: ...?</a>
+                  <div id="panel1" class="content active">
+                    Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
                   </div>
-                </div>
-              </form>
-            </div>
-            <hr/>
-            <div class="panel">
-              <form>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <h4>Status Updates</h4>
-                    <div id="notifications">
-                      <img src="http://placehold.it/200x250&text=Updates" />
-                    </div>
+                </dd>
+                <dd>
+                  <a href="#panel2">Question: ...?</a>
+                  <div id="panel2" class="content">
+                    Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
                   </div>
-                </div>
-              </form>
+                </dd>
+                <dd>
+                  <a href="#panel3">Question: ...?</a>
+                  <div id="panel3" class="content">
+                    Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
+                  </div>
+                </dd>
+              </dl>
             </div>
           </div>
         </div><br>
@@ -174,7 +192,7 @@
         </footer>
 
       </section>
-      <a class="exit-off-canvas"></a>
+      </a>
 
     </div>
   </div>
