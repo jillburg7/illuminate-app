@@ -32,7 +32,7 @@ textarea {
 }
 
 .tabs dd > a {
-	padding: 10px 16px;
+	padding: 10px 12px;
 /*	padding-right: 16px;
 	padding-left: 16px;*/
 }
@@ -46,7 +46,7 @@ i {
 	font-size: 36px;
 }
 
-.fi-lightbulb {
+.fi-lightbulb, .fi-comment-quotes {
 	/*font-size: 24px;
 	padding: 0px 6px;*/
 	padding-left: 7px;
