@@ -11,7 +11,7 @@ textarea {
 }
 
 .question-panel .button {
-	padding: 8px 15px;
+	padding: 7px 7px;
 	margin-bottom: 0px;
 }
 
@@ -29,4 +29,39 @@ textarea {
 
 .tabs dd{
 	border: 1px solid #D6D6D6;
+}
+
+.tabs dd > a {
+	padding: 10px 16px;
+/*	padding-right: 16px;
+	padding-left: 16px;*/
+}
+
+i {
+	/*line-height: 2.0625rem;*/
+	/*padding: 0px 0px 0px 10px;*/
+	padding-left: 10px;
+	color: #FFF;
+	position: relative;
+	font-size: 36px;
+}
+
+.fi-lightbulb {
+	/*font-size: 24px;
+	padding: 0px 6px;*/
+	padding-left: 7px;
+}
+
+.fi-x .fi-list .fi-alert .fi-info .fi-eye .fi-projection-screen
+.fi-upload .fi-download .fi-page-export .fi-page-csv .fi-graph-bar .fi-graph-horizontal
+.fi-results-demographics .fi-results .fi-thumbnails 
+.fi-asterisk .fi-quote .fi-comment-quotes .fi-comments .fi-comment 
+.fi-clipboard-pencil .fi-checkbox .fi-check .fi-like .fi-star
+.fi-calendar .fi-address-book .fi-mail .fi-save .fi-share
+.fi-link .fi-lock .fi-unlock .fi-loop .fi-magnifying-glass .fi-refresh
+.fi-pencil .fi-bookmark .fi-annotate .fi-underline .fi-text-color .fi-paint-bucket .fi-archive
+.fi-zoom-in .fi-zoom-out .fi-arrows-out .fi-arrows-in 
+.fi-arrow-up .fi-arrow-down .fi-arrow-left .fi-arrow-right
+{
+
 }

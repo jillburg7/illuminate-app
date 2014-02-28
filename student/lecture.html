@@ -4,12 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Lecture</title>
+  <!-- <title>Lecture</title> -->
+  <title>Student Lecture</title>
 
-  <link rel="stylesheet" href="css/foundation.css" />
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link rel="stylesheet" href="../css/foundation-icons.css" />
+  <link rel="stylesheet" href="../css/style.css"/>
 
-  <script src="js/vendor/modernizr.js"></script>
+  <script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
 
@@ -19,15 +21,25 @@
     <!-- Top navigation bar -->
       <nav class="tab-bar">
         <section class="left-small">
-          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+          <!-- <a class="left-off-canvas-toggle menu-icon" ><span></span></a> -->
+          <a class="left-off-canvas-toggle " >
+            <span><i class="fi-list"></i></span>
+          </a>
         </section>
 
         <section class="middle tab-bar-section">
-          <h1 class="title"><a href="dashboard.html">Illuminate</a></h1>
+          <h1 class="title">
+            <a href="dashboard.html">
+              Illuminate
+            </a>
+          </h1>
         </section>
 
-        <section class="right-small">
-          <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+        <section class="show-for-small-only right-small">
+          <a class="right-off-canvas-toggle " >
+            <!-- <span><i class="fi-plus"></i></span> -->
+            <span><i class="fi-lightbulb"></i></span>
+          </a>
         </section>
       </nav>
 
@@ -39,24 +51,22 @@
           <li><a href="#">Course Dashboard</a></li>
           <li><a href="#">Course Dashboard</a></li>
           <li><a href="#">Course Dashboard</a></li>
-          ...
         </ul>
       </aside>
 
       <!-- Right Nav Menu -->
 
-      <aside class="right-off-canvas-menu">
+      <aside class="show-for-small-only right-off-canvas-menu">
         <ul class="off-canvas-list">
-          <li><label>Students' Questions</label></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          ...
+          <li><label>Action Options</label></li>
+          <li><a href="#">Ask a Question</a></li>
+          <li><a href="#">View Notification History</a></li>
+          <li><a href="#">Back to Dashboard</a></li>
+          <!-- <li><a href="#">Question: ...?</a></li> -->
         </ul>
       </aside>
 
-      <!-- CONTENT STARTS HERE ! -->
+  <!---------- CONTENT STARTS HERE ! ---------->
 
       <section class="main-section">
         <!-- content goes here -->
@@ -148,8 +158,8 @@
     </div>
   </div>
 
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
+  <script src="../js/vendor/jquery.js"></script>
+  <script src="../js/foundation.min.js"></script>
   <script>
     $(document).foundation();
   </script>

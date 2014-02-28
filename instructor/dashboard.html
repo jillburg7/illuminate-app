@@ -4,38 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dashboard</title>
+  <!-- <title>Dashboard</title> -->
+  <title>Instructor Dashboard</title>
 
-  <link rel="stylesheet" href="css/foundation.css" />
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="../css/foundation.css" />
+  <link rel="stylesheet" href="../css/foundation-icons.css" />
+  <link rel="stylesheet" href="../css/style.css"/>
 
-  <script src="js/vendor/modernizr.js"></script>
+  <script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
     
   <div class="off-canvas-wrap">
     <div class="inner-wrap">
-      <nav class="tab-bar">
-        <section class="left-small">
-          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-        </section>
 
-        <section class="middle tab-bar-section">
-          <h1 class="title"><a href="dashboard.html">Illuminate</a></h1>
-        </section>
+  <!----------  Top Nav Bar  ---------->
+  
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Illuminate</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"></a></li>
+        </ul>
 
-        <!-- <section class="right-small">
-          <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-        </section> -->
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Add a Course</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </section>
       </nav>
 
-      <aside class="left-off-canvas-menu">
+      <!-- <nav class="tab-bar"> -->
+        <!-- <section class="left-small">
+          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+        </section> -->
+
+        <!-- <section class="middle tab-bar-section">
+          <h1 class="title"><a href="dashboard.html">Illuminate</a></h1>
+        </section> -->
+
+        <!-- <section class="right-small">
+          <a class="right-off-canvas-toggle fi-widget" >
+            <span></span>
+          </a>
+        </section> -->
+      <!-- </nav> -->
+
+      <!-- <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
           <li><label>Settings</label></li>
           <li><a href="#">...</a></li>
-          ...
         </ul>
-      </aside>
+      </aside> -->
 
       <!-- <aside class="right-off-canvas-menu">
         <ul class="off-canvas-list">
@@ -47,6 +70,8 @@
           ...
         </ul>
       </aside> -->
+
+  <!---------- CONTENT STARTS HERE ! ---------->
 
       <section class="main-section">
         <!-- content goes here -->
@@ -68,28 +93,28 @@
                    
                       <!-- Thumbnails -->
                    
-                          <div class="large-3 meduim-4 small-6 columns">
+                          <div class="large-3 meduim-3 small-6 columns">
                             <a href="lecture.html">
                               <img src="http://placehold.it/200x200&text=Thumbnail" />
                               <h6 class="panel">Lecture ##</h6>
                             </a>
                           </div>
                    
-                          <div class="large-3 meduim-4 small-6 columns">
+                          <div class="large-3 meduim-3 small-6 columns">
                             <a href="lecture.html">
                               <img src="http://placehold.it/200x200&text=Thumbnail" />
                               <h6 class="panel">Lecture ##</h6>
                             </a>
                           </div>
                    
-                          <div class="large-3 meduim-4 small-6 columns">
+                          <div class="large-3 meduim-3 small-6 columns">
                             <a href="lecture.html">
                               <img src="http://placehold.it/200x200&text=Thumbnail" />
                               <h6 class="panel">Lecture ##</h6>
                             </a>
                           </div>
                    
-                          <div class="large-3 meduim-4 small-6 columns">
+                          <div class="large-3 meduim-3 small-6 columns">
                             <a href="lecture.html">
                               <img src="http://placehold.it/200x200&text=Thumbnail" />
                               <h6 class="panel">Lecture ##</h6>
@@ -97,7 +122,7 @@
                           </div>
                    
                       <!-- End Thumbnails -->
-                   
+                          
                         </div>
                       </div>
                     </div>
@@ -122,8 +147,8 @@
     </div>
   </div>
 
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
+  <script src="../js/vendor/jquery.js"></script>
+  <script src="../js/foundation.min.js"></script>
   <script>
     $(document).foundation();
   </script>
