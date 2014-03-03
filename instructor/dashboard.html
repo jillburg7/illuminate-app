@@ -19,7 +19,7 @@
   <div class="off-canvas-wrap">
     <div class="inner-wrap">
 
-  <!----------  Top Nav Bar  ---------->
+  <!-- Top Nav Bar -->
   
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
@@ -32,7 +32,7 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">Add a Course</a></li>
+            <li><a href="#" data-reveal-id="createCourseModal" data-reveal>Create a Course</a></li>
             <li><a href="../index.html">Logout</a></li>
           </ul>
         </section>
@@ -72,7 +72,31 @@
         </ul>
       </aside> -->
 
-  <!---------- CONTENT STARTS HERE ! ---------->
+      <!-- Modal fly-in/pop-up thingy-->
+      <div id="createCourseModal" class="reveal-modal medium" data-reveal>
+        <h4>Enter Course Information:</h4>
+        <form>
+         <div class="row">
+            <div class="medium-6 large-5 columns">
+              <label>Course Name</label>
+              <input type="text" placeholder="Course Name" />
+            </div>
+            <div class="medium-6 large-5 columns">
+              <label>Course Code</label>
+              <input type="text" placeholder="###-####" />
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="medium-12 large-2 columns">
+              <a href="dashboard.html" class="tiny radius button">OK</a>
+            </div>
+          </div>
+        </form>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+    <!-- End Modal fly-in/pop-up thingy-->
+
+  <!-- CONTENT STARTS HERE ! -->
 
       <section class="main-section">
         <!-- content goes here -->
