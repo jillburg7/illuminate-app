@@ -32,45 +32,37 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">Add a Course</a></li>
+            <li><a href="#" data-reveal-id="addCourseModal" data-reveal>Add a Course</a></li>
             <li><a href="../index.html">Logout</a></li>
           </ul>
         </section>
       </nav>
 
-      <!-- <nav class="tab-bar"> -->
-        <!-- <section class="left-small">
-          <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-        </section> -->
-
-        <!-- <section class="middle tab-bar-section">
-          <h1 class="title"><a href="dashboard.html">Illuminate</a></h1>
-        </section> -->
-
-        <!-- <section class="right-small">
-          <a class="right-off-canvas-toggle fi-widget" >
-            <span></span>
-          </a>
-        </section> -->
-      <!-- </nav> -->
-
-      <!-- <aside class="left-off-canvas-menu">
-        <ul class="off-canvas-list">
-          <li><label>Settings</label></li>
-          <li><a href="#">...</a></li>
-        </ul>
-      </aside> -->
-
-      <!-- <aside class="right-off-canvas-menu">
-        <ul class="off-canvas-list">
-          <li><label>Students' Questions</label></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          <li><a href="#">Question: ...?</a></li>
-          ...
-        </ul>
-      </aside> -->
+      <!-- Modal fly-in/pop-up thingy-->
+      <div id="addCourseModal" class="reveal-modal medium" data-reveal>
+        <h4>Enter Course Information:</h4>
+        <hr/>
+        <h5>This information is provided by the instructor:</h5>
+        <form>
+         <div class="row">
+            <div class="medium-10 large-10 columns">
+              <!-- <label>Course ID</label> -->
+              <input type="text" placeholder="Course ID" />
+            </div>
+            <!-- <div class="medium-6 large-5 columns">
+              <label>Course Code</label>
+              <input type="text" placeholder="###-####" />
+            </div> -->
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="medium-2 large-2 columns">
+              <a href="dashboard.html" class="tiny radius button">OK</a>
+            </div>
+          </div>
+        </form>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+    <!-- End Modal fly-in/pop-up thingy-->
 
   <!-- CONTENT STARTS HERE ! -->
 
