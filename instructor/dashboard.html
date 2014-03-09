@@ -19,8 +19,7 @@
   <div class="off-canvas-wrap">
     <div class="inner-wrap">
 
-  <!-- Top Nav Bar -->
-  
+      <!-- Top Nav Bar -->
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
           <li class="name">
@@ -46,16 +45,8 @@
         <form>
          <div class="row">
             <div class="medium-10 large-10 columns">
-              <!-- <label>Course Name</label> -->
               <input type="text" placeholder="i.e., CSC 301-0001" />
             </div>
-           <!--  <div class="medium-6 large-5 columns">
-              <label>Course Code</label>
-              <input type="text" placeholder="###-####" />
-            </div> -->
-          <!-- </div> -->
-          <!-- <div class="row"> -->
-            <!-- <div class="medium-8 large-8 columns"></div> -->
             <div class="medium-2 large-2 columns">
               <a href="dashboard.html" class="tiny radius button">OK</a>
             </div>
@@ -63,16 +54,12 @@
         </form>
         <a class="close-reveal-modal">&#215;</a>
       </div>
-    <!-- End Modal fly-in/pop-up thingy-->
+      <!-- End Modal fly-in/pop-up thingy-->
 
-  <!-- CONTENT STARTS HERE ! -->
-
+      <!-- CONTENT STARTS HERE ! -->
       <section class="main-section">
-        <!-- content goes here -->
         <div class="row">
           <div class="large-12 columns">
-            <!-- <div class="row">
-              <div class="large-12 columns"> -->
                 <dl class="tabs" data-tab>
                   <dd class="active"><a href="#panel2-1">Courses</a></dd>
                   <dd><a href="#panel2-2">Create Quiz</a></dd>
@@ -80,10 +67,9 @@
                 </dl>
                 <div class="tabs-content panel radius">
                   <div class="content active large-12 columns" id="panel2-1">
-                    <!-- First panel content goes here... -->
+                  <!-- First panel content goes here... -->
                    
-                  <!-- Thumbnails -->
-                   
+                    <!-- Thumbnails -->
                     <div class="row">
                       <a href="lecture.html">
                         <div class="small-3  medium-4 large-3 columns">
@@ -111,17 +97,17 @@
                           <form action="#" method="post">
                             <div>
                             <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
+                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint"/>
 
                               <!-- lecture selector box -->
                               <div class="row">
                                 <div class="large-12 columns">
                                   <label>Select Lecture
                                     <select>
-                                      <option value="husker">Lecture 4</option>
-                                      <option value="starbuck">Lecture 3</option>
-                                      <option value="hotdog">Lecture 2</option>
-                                      <option value="apollo">Lecture 1</option>
+                                      <option value="id4">Lecture 4</option>
+                                      <option value="id3">Lecture 3</option>
+                                      <option value="id2">Lecture 2</option>
+                                      <option value="id1">Lecture 1</option>
                                     </select>
                                   </label>
                                 </div>
@@ -168,10 +154,10 @@
                                 <div class="large-12 columns">
                                   <label>Select Lecture
                                     <select>
-                                      <option value="husker">Lecture 4</option>
-                                      <option value="starbuck">Lecture 3</option>
-                                      <option value="hotdog">Lecture 2</option>
-                                      <option value="apollo">Lecture 1</option>
+                                      <option value="id4">Lecture 4</option>
+                                      <option value="id3">Lecture 3</option>
+                                      <option value="id2">Lecture 2</option>
+                                      <option value="id1">Lecture 1</option>
                                     </select>
                                   </label>
                                 </div>
@@ -218,10 +204,10 @@
                                 <div class="large-12 columns">
                                   <label>Select Lecture
                                     <select>
-                                      <option value="husker">Lecture 4</option>
-                                      <option value="starbuck">Lecture 3</option>
-                                      <option value="hotdog">Lecture 2</option>
-                                      <option value="apollo">Lecture 1</option>
+                                      <option value="id4">Lecture 4</option>
+                                      <option value="id3">Lecture 3</option>
+                                      <option value="id2">Lecture 2</option>
+                                      <option value="id1">Lecture 1</option>
                                     </select>
                                   </label>
                                 </div>
@@ -268,60 +254,10 @@
                                 <div class="large-12 columns">
                                   <label>Select Lecture
                                     <select>
-                                      <option value="husker">Lecture 4</option>
-                                      <option value="starbuck">Lecture 3</option>
-                                      <option value="hotdog">Lecture 2</option>
-                                      <option value="apollo">Lecture 1</option>
-                                    </select>
-                                  </label>
-                                </div>
-                              </div>
-
-                              <input type="submit" href="#" class="small radius button" value="Upload"/>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                   
-                    <div class="row">
-                      <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
-
-                        <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
-                        <div id="drop" data-dropdown-content class="f-dropdown content small">
-                          <form action="#" method="post">
-                            <label>Lecture Title
-                              <input type="text" placeholder="Lecture Title">
-                              <a href="#" class="button postfix">OK</a>
-                            </label>
-                          </form>
-                        </div>
-
-                        <!-- drop down content button -->
-                        <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
-                        <div id="drop2" data-dropdown-content class="f-dropdown content small">
-                          <h4>Choose a file to upload:</h4>
-                          <form action="#" method="post">
-                            <div>
-                            <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
-
-                              <!-- lecture selector box -->
-                              <div class="row">
-                                <div class="large-12 columns">
-                                  <label>Select Lecture
-                                    <select>
-                                      <option value="husker">Lecture 4</option>
-                                      <option value="starbuck">Lecture 3</option>
-                                      <option value="hotdog">Lecture 2</option>
-                                      <option value="apollo">Lecture 1</option>
+                                      <option value="id4">Lecture 4</option>
+                                      <option value="id3">Lecture 3</option>
+                                      <option value="id2">Lecture 2</option>
+                                      <option value="id1">Lecture 1</option>
                                     </select>
                                   </label>
                                 </div>
@@ -369,17 +305,47 @@
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                       </div>
                     </div>
-
-                  <!-- End Thumbnails -->
-                          
+                    <!-- End Thumbnails -->   
                   </div>
+                  <!-- end first panel -->
                   
+                  <!-- start second panel -->
                   <div class="content" id="panel2-2">
-                    <p>Second panel content goes here...</p>
+                    <!-- <p>Second panel content goes here...</p> -->
+                    
+                    <!-- form content -->
+                    <form>
+                      <!-- user credentials grouping -->
+                      <div class="row">
+                        <div class="small-12 medium-12 large-12 columns">
+                            <label>Email Address
+                              <input type="email" placeholder="user@email.com">
+                            </label>
+
+                            <label>Password
+                              <input type="password" placeholder="password">
+                            </label>
+
+                            <label>Confirm Password
+                              <input type="password" placeholder="password">
+                            </label>
+                        </div>
+                      </div>
+
+                      <div class="row clearfix">
+                        <div class="small-12  medium-12 large-12 small-centered columns right">
+                          <a href="index.html" class="small secondary button ">Cancel</a>
+                          <a href="index.html" class="small secondary button ">Submit</a>
+                        </div>
+                      </div>
+                    </form>
                   </div>
+                  <!-- end second panel -->
+                  
+                  <!-- start thired panel -->
                   <div class="content" id="panel2-3">
                     <!--Third panel content goes here...-->
-                    <h3>Select a user:</h3>
+                    <h3>Download Lecture Data?</h3>
                     <p>
                       <a href="#" class="medium secondary button" data-reveal-id="notifyDownload" data-reveal>Download as .csv</a>
                       <a href="#" class="medium secondary button" data-reveal-id="notifyEmail" data-reveal>Email .cvs</a>
