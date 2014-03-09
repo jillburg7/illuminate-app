@@ -72,6 +72,22 @@ fieldset {
 	margin-bottom: 0px;
 }
 
+.quiz {
+	padding: 0px;
+	margin-right: 0px;
+	margin-left: 0px;;
+}
+
+.quiz-creation {
+	display: inline;
+	margin-bottom: 0px;
+}
+
+.quiz-creation label {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
 /******** COMMENTS *********/
 
 i {

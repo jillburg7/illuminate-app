@@ -66,7 +66,7 @@
                   <dd><a href="#panel2-3">Export</a></dd>
                 </dl>
                 <div class="tabs-content panel radius">
-                  <div class="content active large-12 columns" id="panel2-1">
+                  <div class="content active " id="panel2-1">
                   <!-- First panel content goes here... -->
                    
                     <!-- Thumbnails -->
@@ -314,28 +314,73 @@
                     <!-- <p>Second panel content goes here...</p> -->
                     
                     <!-- form content -->
-                    <form>
+                    <form action="#" method="POST">
                       <!-- user credentials grouping -->
-                      <div class="row">
-                        <div class="small-12 medium-12 large-12 columns">
-                            <label>Email Address
-                              <input type="email" placeholder="user@email.com">
+                      <div class="row ">
+                        <div class="small-12 medium-12 large-12 small-centered columns">
+                            <label>Quiz Identifier
+                              <input type="text" placeholder="Favorite Color" />
                             </label>
 
-                            <label>Password
-                              <input type="password" placeholder="password">
+                            <label>Question
+                              <input type="text" placeholder="Of the colors below, what is your favorite color?" />
                             </label>
 
-                            <label>Confirm Password
-                              <input type="password" placeholder="password">
+                            <label>Fill in possible answers below. Enable the selector next to the correct answer.
+                              <br/>Leave answer fields blank if you do not want to have all four possible choices.
                             </label>
+                            <!-- multiple-choice: answer A -->
+                            <div class="row">
+                              <div class="small-2 medium-2 large-2 columns quiz">
+                                <input type="radio" name="multipleChoice" value="A" id="A" checked />
+                                <label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
+                              </div>
+                              <div class="small-10 medium-10 large-10 columns end ">
+                                <input type="text" placeholder="Blue" />
+                              </div>
+                            </div>
+
+                            <!-- multiple-choice: answer B -->
+                            <div class="row">
+                              <div class="small-2 medium-2 large-2 columns ">
+                                <input type="radio" name="multipleChoice" value="B" id="B" />
+                                <label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
+                              </div>
+                              <div class="small-10 medium-10 large-10 columns end ">
+                                <input type="text" placeholder="Yellow" />
+                              </div>
+                            </div>
+
+                            <!-- multiple-choice: answer C -->
+                            <div class="row">
+                              <div class="small-2 medium-2 large-2 columns quiz">
+                                <input type="radio" name="multipleChoice" value="C" id="C" />
+                                <label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
+                              </div>
+                              <div class="small-10 medium-10 large-10 columns end ">
+                                <input type="text" placeholder="Green" />
+                              </div>
+                            </div>
+
+                            <!-- multiple-choice: answer D -->
+                            <div class="row">
+                              <div class="small-2 medium-2 large-2 columns quiz">
+                                <input type="radio" name="multipleChoice" value="D" id="D" />
+                                <label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
+                              </div>
+                              <div class="small-10 medium-10 large-10 columns end ">
+                                <input type="text" placeholder="Red" />
+                              </div>
+                            </div>
                         </div>
                       </div>
 
                       <div class="row clearfix">
-                        <div class="small-12  medium-12 large-12 small-centered columns right">
-                          <a href="index.html" class="small secondary button ">Cancel</a>
-                          <a href="index.html" class="small secondary button ">Submit</a>
+                        <div class="small-12  medium-12 large-12 small-centered columns ">
+                          <section class="right">
+                            <!-- <a href="#" class="small button">Cancel</a> -->
+                            <a href="#" class="small button">Save</a>
+                          </section>
                         </div>
                       </div>
                     </form>
