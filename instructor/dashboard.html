@@ -1,4 +1,4 @@
-<!doctype html>
+q<!doctype html>
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
@@ -42,7 +42,7 @@
         <h4>Enter Course Information:</h4>
         <hr/>
         <h5>Start by entering the course name/number:</h5>
-        <form>
+        <form action="#" method="POST">
          <div class="row">
             <div class="medium-10 large-10 columns">
               <input type="text" placeholder="i.e., CSC 301-0001" />
@@ -60,359 +60,357 @@
       <section class="main-section">
         <div class="row">
           <div class="large-12 columns">
-                <dl class="tabs" data-tab>
-                  <dd class="active"><a href="#panel2-1">Courses</a></dd>
-                  <dd><a href="#panel2-2">Create Quiz</a></dd>
-                  <dd><a href="#panel2-3">Export</a></dd>
-                </dl>
-                <div class="tabs-content panel radius">
-                  <div class="content active " id="panel2-1">
-                  <!-- First panel content goes here... -->
-                   
-                    <!-- Thumbnails -->
-                    <div class="row">
-                      <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
+            <dl class="tabs" data-tab>
+              <dd class="active"><a href="#panel2-1">Courses</a></dd>
+              <dd><a href="#panel2-2">Create Quiz</a></dd>
+              <dd><a href="#panel2-3">Export</a></dd>
+            </dl>
+            <div class="tabs-content panel radius">
 
-                        <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
-                        <div id="drop" data-dropdown-content class="f-dropdown content small">
-                          <form action="#" method="post">
-                            <label>Lecture Title
-                              <input type="text" placeholder="Lecture Title">
-                              <a href="#" class="button postfix">OK</a>
-                            </label>
-                          </form>
-                        </div>
-
-                        <!-- drop down content button -->
-                        <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
-                        <div id="drop2" data-dropdown-content class="f-dropdown content small">
-                          <h4>Choose a file to upload:</h4>
-                          <form action="#" method="post">
-                            <div>
-                            <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint"/>
-
-                              <!-- lecture selector box -->
-                              <div class="row">
-                                <div class="large-12 columns">
-                                  <label>Select Lecture
-                                    <select>
-                                      <option value="id4">Lecture 4</option>
-                                      <option value="id3">Lecture 3</option>
-                                      <option value="id2">Lecture 2</option>
-                                      <option value="id1">Lecture 1</option>
-                                    </select>
-                                  </label>
-                                </div>
-                              </div>
-
-                              <input type="submit" href="#" class="small radius button" value="Upload"/>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+              <!-- first panel content -->
+              <div class="content active " id="panel2-1">
+                <div class="row">
+                  <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
                     </div>
-                   
-                    <div class="row">
-                      <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
+                  </a>
 
-                        <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
-                        <div id="drop" data-dropdown-content class="f-dropdown content small">
-                          <form action="#" method="post">
-                            <label>Lecture Title
-                              <input type="text" placeholder="Lecture Title">
-                              <a href="#" class="button postfix">OK</a>
-                            </label>
-                          </form>
-                        </div>
+                  <!-- lecture content -->
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
 
-                        <!-- drop down content button -->
-                        <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
-                        <div id="drop2" data-dropdown-content class="f-dropdown content small">
-                          <h4>Choose a file to upload:</h4>
-                          <form action="#" method="post">
-                            <div>
-                            <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
-
-                              <!-- lecture selector box -->
-                              <div class="row">
-                                <div class="large-12 columns">
-                                  <label>Select Lecture
-                                    <select>
-                                      <option value="id4">Lecture 4</option>
-                                      <option value="id3">Lecture 3</option>
-                                      <option value="id2">Lecture 2</option>
-                                      <option value="id1">Lecture 1</option>
-                                    </select>
-                                  </label>
-                                </div>
-                              </div>
-
-                              <input type="submit" href="#" class="small radius button" value="Upload"/>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+                    <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
+                    <div id="drop" data-dropdown-content class="f-dropdown content small">
+                      <form action="#" method="post">
+                        <label>Lecture Title
+                          <input type="text" placeholder="Lecture Title">
+                          <a href="#" class="button postfix">OK</a>
+                        </label>
+                      </form>
                     </div>
-                   
-                    <div class="row">
-                      <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
 
-                        <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
-                        <div id="drop" data-dropdown-content class="f-dropdown content small">
-                          <form action="#" method="post">
-                            <label>Lecture Title
-                              <input type="text" placeholder="Lecture Title">
-                              <a href="#" class="button postfix">OK</a>
-                            </label>
-                          </form>
-                        </div>
+                    <!-- drop down content button -->
+                    <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
+                    <div id="drop2" data-dropdown-content class="f-dropdown content small">
+                      <h4>Choose a file to upload:</h4>
+                      <form action="#" method="post">
+                        <div>
+                        <!-- file chooser -->
+                          <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint"/>
 
-                        <!-- drop down content button -->
-                        <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
-                        <div id="drop2" data-dropdown-content class="f-dropdown content small">
-                          <h4>Choose a file to upload:</h4>
-                          <form action="#" method="post">
-                            <div>
-                            <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
-
-                              <!-- lecture selector box -->
-                              <div class="row">
-                                <div class="large-12 columns">
-                                  <label>Select Lecture
-                                    <select>
-                                      <option value="id4">Lecture 4</option>
-                                      <option value="id3">Lecture 3</option>
-                                      <option value="id2">Lecture 2</option>
-                                      <option value="id1">Lecture 1</option>
-                                    </select>
-                                  </label>
-                                </div>
-                              </div>
-
-                              <input type="submit" href="#" class="small radius button" value="Upload"/>
+                          <!-- lecture selector box -->
+                          <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Lecture
+                                <select>
+                                  <option value="id4">Lecture 4</option>
+                                  <option value="id3">Lecture 3</option>
+                                  <option value="id2">Lecture 2</option>
+                                  <option value="id1">Lecture 1</option>
+                                </select>
+                              </label>
                             </div>
-                          </form>
+                          </div>
+
+                          <input type="submit" href="#" class="small radius button" value="Upload"/>
                         </div>
-                      </div>
+                      </form>
                     </div>
-                   
-                    <div class="row">
-                      <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
-
-                        <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
-                        <div id="drop" data-dropdown-content class="f-dropdown content small">
-                          <form action="#" method="post">
-                            <label>Lecture Title
-                              <input type="text" placeholder="Lecture Title">
-                              <a href="#" class="button postfix">OK</a>
-                            </label>
-                          </form>
-                        </div>
-
-                        <!-- drop down content button -->
-                        <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
-                        <div id="drop2" data-dropdown-content class="f-dropdown content small">
-                          <h4>Choose a file to upload:</h4>
-                          <form action="#" method="post">
-                            <div>
-                            <!-- file chooser -->
-                              <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
-
-                              <!-- lecture selector box -->
-                              <div class="row">
-                                <div class="large-12 columns">
-                                  <label>Select Lecture
-                                    <select>
-                                      <option value="id4">Lecture 4</option>
-                                      <option value="id3">Lecture 3</option>
-                                      <option value="id2">Lecture 2</option>
-                                      <option value="id1">Lecture 1</option>
-                                    </select>
-                                  </label>
-                                </div>
-                              </div>
-
-                              <input type="submit" href="#" class="small radius button" value="Upload"/>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                   
-                    <div class="row">
-                    <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
-                        <p class="hide-for-small-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      </div>
-                    </div>
-                   
-                    <div class="row">
-                    <a href="lecture.html">
-                        <div class="small-3  medium-4 large-3 columns">
-                          <img src="http://placehold.it/150x150&text=ClickToOpen" />
-                        </div>
-                      </a>
-                      <div class="lecture-desc small-9 medium-8 large-9 columns panel">
-                        <h6>Course ###-####</h6>
-                        <hr/>
-                        <p class="hide-for-small-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      </div>
-                    </div>
-                    <!-- End Thumbnails -->   
-                  </div>
-                  <!-- end first panel -->
-                  
-                  <!-- start second panel -->
-                  <div class="content" id="panel2-2">
-                    <!-- <p>Second panel content goes here...</p> -->
-                    
-                    <!-- form content -->
-                    <form action="#" method="POST">
-                      <!-- user credentials grouping -->
-                      <div class="row ">
-                        <div class="small-12 medium-12 large-12 small-centered columns">
-                            <label>Quiz Identifier
-                              <input type="text" placeholder="Favorite Color" />
-                            </label>
-
-                            <label>Question
-                              <input type="text" placeholder="Of the colors below, what is your favorite color?" />
-                            </label>
-
-                            <label>Fill in possible answers below. Enable the selector next to the correct answer.
-                              <br/>Leave answer fields blank if you do not want to have all four possible choices.
-                            </label>
-                            <!-- multiple-choice: answer A -->
-                            <div class="row">
-                              <div class="small-2 medium-2 large-2 columns quiz">
-                                <input type="radio" name="multipleChoice" value="A" id="A" checked />
-                                <label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
-                              </div>
-                              <div class="small-10 medium-10 large-10 columns end ">
-                                <input type="text" placeholder="Blue" />
-                              </div>
-                            </div>
-
-                            <!-- multiple-choice: answer B -->
-                            <div class="row">
-                              <div class="small-2 medium-2 large-2 columns ">
-                                <input type="radio" name="multipleChoice" value="B" id="B" />
-                                <label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
-                              </div>
-                              <div class="small-10 medium-10 large-10 columns end ">
-                                <input type="text" placeholder="Yellow" />
-                              </div>
-                            </div>
-
-                            <!-- multiple-choice: answer C -->
-                            <div class="row">
-                              <div class="small-2 medium-2 large-2 columns quiz">
-                                <input type="radio" name="multipleChoice" value="C" id="C" />
-                                <label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
-                              </div>
-                              <div class="small-10 medium-10 large-10 columns end ">
-                                <input type="text" placeholder="Green" />
-                              </div>
-                            </div>
-
-                            <!-- multiple-choice: answer D -->
-                            <div class="row">
-                              <div class="small-2 medium-2 large-2 columns quiz">
-                                <input type="radio" name="multipleChoice" value="D" id="D" />
-                                <label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
-                              </div>
-                              <div class="small-10 medium-10 large-10 columns end ">
-                                <input type="text" placeholder="Red" />
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-
-                      <div class="row clearfix">
-                        <div class="small-12  medium-12 large-12 small-centered columns ">
-                          <section class="right">
-                            <!-- <a href="#" class="small button">Cancel</a> -->
-                            <a href="#" class="small button">Save</a>
-                          </section>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- end second panel -->
-                  
-                  <!-- start thired panel -->
-                  <div class="content" id="panel2-3">
-                    <!--Third panel content goes here...-->
-                    <h3>Download Lecture Data?</h3>
-                    <p>
-                      <a href="#" class="medium secondary button" data-reveal-id="notifyDownload" data-reveal>Download as .csv</a>
-                      <a href="#" class="medium secondary button" data-reveal-id="notifyEmail" data-reveal>Email .cvs</a>
-                    </p>
-
-                    <!-- Modal fly-in/pop-up thingy-->
-                    <div id="notifyDownload" class="reveal-modal small" data-reveal>
-                      <h5>Your file has been downloaded to the default location!</h5>
-                      <a class="close-reveal-modal">&#215;</a>
-                    </div>
-                    <div id="notifyEmail" class="reveal-modal small" data-reveal>
-                      <h5>Your email has been sent!</h5>
-                      <a class="close-reveal-modal">&#215;</a>
-                    </div>
-                    <!-- End Modal fly-in/pop-up thingy-->
-                  </div>
-                  <div class="content" id="panel2-4">
-                    <p>Fourth panel content goes here...</p>
                   </div>
                 </div>
-              <!-- </div>
-            </div> -->
+               
+                <div class="row">
+                  <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
+                    </div>
+                  </a>
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
+
+                    <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
+                    <div id="drop" data-dropdown-content class="f-dropdown content small">
+                      <form action="#" method="post">
+                        <label>Lecture Title
+                          <input type="text" placeholder="Lecture Title">
+                          <a href="#" class="button postfix">OK</a>
+                        </label>
+                      </form>
+                    </div>
+
+                    <!-- drop down content button -->
+                    <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
+                    <div id="drop2" data-dropdown-content class="f-dropdown content small">
+                      <h4>Choose a file to upload:</h4>
+                      <form action="#" method="post">
+                        <div>
+                        <!-- file chooser -->
+                          <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
+
+                          <!-- lecture selector box -->
+                          <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Lecture
+                                <select>
+                                  <option value="id4">Lecture 4</option>
+                                  <option value="id3">Lecture 3</option>
+                                  <option value="id2">Lecture 2</option>
+                                  <option value="id1">Lecture 1</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+
+                          <input type="submit" href="#" class="small radius button" value="Upload"/>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
+                    </div>
+                  </a>
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
+
+                    <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
+                    <div id="drop" data-dropdown-content class="f-dropdown content small">
+                      <form action="#" method="post">
+                        <label>Lecture Title
+                          <input type="text" placeholder="Lecture Title">
+                          <a href="#" class="button postfix">OK</a>
+                        </label>
+                      </form>
+                    </div>
+
+                    <!-- drop down content button -->
+                    <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
+                    <div id="drop2" data-dropdown-content class="f-dropdown content small">
+                      <h4>Choose a file to upload:</h4>
+                      <form action="#" method="post">
+                        <div>
+                        <!-- file chooser -->
+                          <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
+
+                          <!-- lecture selector box -->
+                          <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Lecture
+                                <select>
+                                  <option value="id4">Lecture 4</option>
+                                  <option value="id3">Lecture 3</option>
+                                  <option value="id2">Lecture 2</option>
+                                  <option value="id1">Lecture 1</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+
+                          <input type="submit" href="#" class="small radius button" value="Upload"/>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
+                    </div>
+                  </a>
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
+
+                    <a href="#" class="small radius button" data-dropdown="drop">New lecture</a>
+                    <div id="drop" data-dropdown-content class="f-dropdown content small">
+                      <form action="#" method="post">
+                        <label>Lecture Title
+                          <input type="text" placeholder="Lecture Title">
+                          <a href="#" class="button postfix">OK</a>
+                        </label>
+                      </form>
+                    </div>
+
+                    <!-- drop down content button -->
+                    <a href="#" class="small radius button" data-dropdown="drop2">Upload Content</a>
+                    <div id="drop2" data-dropdown-content class="f-dropdown content small">
+                      <h4>Choose a file to upload:</h4>
+                      <form action="#" method="post">
+                        <div>
+                        <!-- file chooser -->
+                          <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint,application/vnd.ms-excel"/>
+
+                          <!-- lecture selector box -->
+                          <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Lecture
+                                <select>
+                                  <option value="id4">Lecture 4</option>
+                                  <option value="id3">Lecture 3</option>
+                                  <option value="id2">Lecture 2</option>
+                                  <option value="id1">Lecture 1</option>
+                                </select>
+                              </label>
+                            </div>
+                          </div>
+
+                          <input type="submit" href="#" class="small radius button" value="Upload"/>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+               
+                <div class="row">
+                <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
+                    </div>
+                  </a>
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
+                    <p class="hide-for-small-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+               
+                <div class="row">
+                <a href="lecture.html">
+                    <div class="small-3  medium-4 large-3 columns">
+                      <img src="http://placehold.it/150x150&text=ClickToOpen" />
+                    </div>
+                  </a>
+                  <div class="lecture-desc small-9 medium-8 large-9 columns panel">
+                    <h6>Course ###-####</h6>
+                    <hr/>
+                    <p class="hide-for-small-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end first panel -->
+              
+              <!-- start second panel -->
+              <div class="content" id="panel2-2">
+                <!-- <p>Second panel content goes here...</p> -->
+                
+                <!-- form content -->
+                <form action="#" method="POST">
+                  <!-- user credentials grouping -->
+                  <div class="row ">
+                    <div class="small-12 medium-12 large-12 small-centered columns">
+                        <label>Quiz Identifier
+                          <input type="text" placeholder="Favorite Color" />
+                        </label>
+
+                        <label>Question
+                          <input type="text" placeholder="Of the colors below, what is your favorite color?" />
+                        </label>
+
+                        <label>Fill in possible answers below. Enable the selector next to the correct answer.
+                          <br/>Leave answer fields blank if you do not want to have all four possible choices.
+                        </label>
+                        <!-- multiple-choice: answer A -->
+                        <div class="row">
+                          <div class="small-2 medium-2 large-2 columns quiz-creation">
+                            <input type="radio" name="multipleChoice" value="A" id="A" checked />
+                            <label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
+                          </div>
+                          <div class="small-10 medium-10 large-10 columns end ">
+                            <input type="text" placeholder="Blue" />
+                          </div>
+                        </div>
+
+                        <!-- multiple-choice: answer B -->
+                        <div class="row">
+                          <div class="small-2 medium-2 large-2 columns quiz-creation">
+                            <input type="radio" name="multipleChoice" value="B" id="B" />
+                            <label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
+                          </div>
+                          <div class="small-10 medium-10 large-10 columns end ">
+                            <input type="text" placeholder="Yellow" />
+                          </div>
+                        </div>
+
+                        <!-- multiple-choice: answer C -->
+                        <div class="row">
+                          <div class="small-2 medium-2 large-2 columns quiz-creation">
+                            <input type="radio" name="multipleChoice" value="C" id="C" />
+                            <label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
+                          </div>
+                          <div class="small-10 medium-10 large-10 columns end ">
+                            <input type="text" placeholder="Green" />
+                          </div>
+                        </div>
+
+                        <!-- multiple-choice: answer D -->
+                        <div class="row">
+                          <div class="small-2 medium-2 large-2 columns quiz-creation">
+                            <input type="radio" name="multipleChoice" value="D" id="D" />
+                            <label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
+                          </div>
+                          <div class="small-10 medium-10 large-10 columns end ">
+                            <input type="text" placeholder="Red" />
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row clearfix">
+                    <div class="small-12  medium-12 large-12 small-centered columns ">
+                      <section class="right">
+                        <!-- <a href="#" class="small button">Cancel</a> -->
+                        <a href="#" class="small button">Save</a>
+                      </section>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- end second panel -->
+              
+              <!-- start thired panel -->
+              <div class="content" id="panel2-3">
+                <!--Third panel content goes here...-->
+                <h3>Download Lecture Data?</h3>
+                <p>
+                  <a href="#" class="medium secondary button" data-reveal-id="notifyDownload" data-reveal>Download as .csv</a>
+                  <a href="#" class="medium secondary button" data-reveal-id="notifyEmail" data-reveal>Email .cvs</a>
+                </p>
+
+                <!-- Modal fly-in/pop-up thingy-->
+                <div id="notifyDownload" class="reveal-modal small" data-reveal>
+                  <h5>Your file has been downloaded to the default location!</h5>
+                  <a class="close-reveal-modal">&#215;</a>
+                </div>
+                <div id="notifyEmail" class="reveal-modal small" data-reveal>
+                  <h5>Your email has been sent!</h5>
+                  <a class="close-reveal-modal">&#215;</a>
+                </div>
+                <!-- End Modal fly-in/pop-up thingy-->
+              </div>
+              <div class="content" id="panel2-4">
+                <p>Fourth panel content goes here...</p>
+              </div>
+            </div>
           </div>
         </div><br>
       <a class="exit-off-canvas"></a>
