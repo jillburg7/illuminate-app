@@ -5,25 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- <title>Lecture</title> -->
-  <title>TEMPLATE TITLE</title>
+  <title>Instructor Lecture</title>
 
   <!-- IF THIS FILE IN THE MAIN FILE DIRECTORY -->
   <!-- ***YOU'LL NEED TO UPDATE THE BOTTOM OF THIS FILE IN ORDER MAKE FOUNDATION WORK WITH LINKS!!*** -->
-    <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/foundation.css" />
   <link rel="stylesheet" href="css/foundation-icons.css" />
   <link rel="stylesheet" href="css/style.css"/>
   <script src="js/vendor/modernizr.js"></script>
   <script src="js/script.js"></script>
   <!-- end of linking to files from main file directory -->
-
-
-  <!-- IF THIS FILE IN THE student OR instructor SUB-DIRECTORY -->
-  <link rel="stylesheet" href="../css/foundation.css" />
-  <link rel="stylesheet" href="../css/foundation-icons.css" />
-  <link rel="stylesheet" href="../css/style.css"/>
-  <script src="../js/vendor/modernizr.js"></script>
-  <script src="../js/script.js"></script>
-  <!-- end of linking to files from sub-directory -->
 
 </head>
 <body>
@@ -41,7 +32,7 @@
           </li>
           <li class="toggle-topbar">
             <a href="#">
-              <i class="fi-lightbulb"></i> <!-- shown in small - condensed nav -->
+              <i class="fi-comment-quotes"></i> <!-- shown in small - condensed nav -->
             </a>
           </li>
         </ul>
@@ -65,29 +56,42 @@
 
   <!-- CONTENT STARTS HERE ! -->
 
+      <center><h6>Logon to Illuminate</h6></center>
+
       <section class="main-section">
         <div class="row">
           <div class="small-12 medium-12 large-9 columns">
             <div class="panel">
-              <h4>Left this in template to show you where you are when editing this page</h4>
-              <p>(view file in browser)</p>
-            </div>
-       
-             <hr />  <!-- horizontal line break -->
-       
-          </div>
-          <div class="show-for-large-only large-3 columns question-panel">
-            <div class="panel">
-              <h4>this is the side panel</h4>
-              <br>
-              <p>** YOU'LL ONLY SEE THIS IN A 'DESTOP BROWSER' **</p>
-              <p>hence the class name "show-for-large-only"</p>
-              <p>see Foundation visibility classes :)</p>
-              <h5>those classes are extremely important!</h5>
-              <br>
-              <p>(keep it, trash it, down where ever)</p>
-            </div>
-          </div>
+              <form>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>User Name:
+                      <input type="text" placeholder="user name here..." />
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>Password:
+                      <input type="password" placeholder="enter password here..." /><!-- http://www.echoecho.com/htmlforms06.htm //-->
+                    </label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="large-4 columns">
+                    <label>Log in as:</label>
+                    <input type="radio" name="instructor" value="instructor" id="pokemonInstructor"><label for="pokemonInstructor">instructor</label>
+                    <input type="radio" name="student" value="student" id="pokemonStudent"><label for="pokemonStudent">student</label>
+                    <a href="index.html" class="small radius button">Clear</a>
+                    <a href="select.html" class="small radius button">Submit</a>
+                  </div>
+                </div>
+              </form>
+              <p><a href="create.html">create new logon</a></p>
+            </div>       
+             <hr />  <!-- horizontal line break -->       
+          </div>          
         </div><br>
 
   <!-- FOOTER STARTS HERE ! -->
@@ -120,8 +124,8 @@
   </div>
 
   <!-- this stuff needs to be in EVERY FILE! it makes Foundation work!!! :) -->
-  <script src="../js/vendor/jquery.js"></script>
-  <script src="../js/foundation.min.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
   <script>
     $(document).foundation();
   </script>

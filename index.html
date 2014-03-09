@@ -4,126 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- <title>Lecture</title> -->
-  <title>Instructor Lecture</title>
+  <title>Illuminate</title>
 
-  <!-- IF THIS FILE IN THE MAIN FILE DIRECTORY -->
-  <!-- ***YOU'LL NEED TO UPDATE THE BOTTOM OF THIS FILE IN ORDER MAKE FOUNDATION WORK WITH LINKS!!*** -->
   <link rel="stylesheet" href="css/foundation.css" />
   <link rel="stylesheet" href="css/foundation-icons.css" />
   <link rel="stylesheet" href="css/style.css"/>
+
   <script src="js/vendor/modernizr.js"></script>
   <script src="js/script.js"></script>
-  <!-- end of linking to files from main file directory -->
-
 </head>
 <body>
 
-  <!--  Wraps all HTML in the <body> tag (allows the side menus to open and close)  -->
-  <div class="off-canvas-wrap">
-    <div class="inner-wrap">
+<!-- CONTENT STARTS HERE ! -->
+  <section class="main-section">
 
-  <!-- Top Nav Bar -->
-  
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="dashboard.html">Illuminate</a></h1>
-          </li>
-          <li class="toggle-topbar">
-            <a href="#">
-              <i class="fi-comment-quotes"></i> <!-- shown in small - condensed nav -->
-            </a>
-          </li>
-        </ul>
+    <div class="row">
+      <div class="large-12 small-centered columns">
+        <h1 class="text-center">Welcome to Illuminate</h1>
+      </div>
+    </div>
 
-        <!-- To create sections (groups of functionality) in the Nav Bar -->
-        <section class="top-bar-section">
-          <!-- Right TopBar Navigation Section -->
-          <ul class="right">
-            <li></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="#">NavItem</a></li>
-            <li><a href="#" class="hide-for-large-only right-off-canvas-toggle">NavItem</a></li>
-          </ul>
-        </section>
-      </nav>
+    <div class="row">
+      <div class="small-12 medium-5 large-4 small-centered columns">
+        <div class="panel">
+          <h5>Select a user:</h5>
+          <p>
+            <a href="student/dashboard.html" class="small secondary button signup-link">Student</a>
+            <a href="instructor/dashboard.html" class="small secondary button signup-link">Instructor</a>
+          </p>
+          <h6>[For testing purposes]</h6>
+        </div>
+      </div>
+    </div>
 
-    <!-- Right Nav Menu -->
-      <aside class="right-off-canvas-menu">
-      </aside>
-    <!-- End Right Nav Menu -->
+    <div class="row">
+      <div class="small-11 small-centered columns">
+        <form>
+          <!-- user credentials grouping -->
+          <div class="row">
+            <div class="small-12 medium-8 large-6 small-centered columns">
+              <fieldset>
 
-  <!-- CONTENT STARTS HERE ! -->
+                <legend>Log In to Illuminate</legend>
+                <label>Email Address
+                  <input type="email" placeholder="user@email.com">
+                </label>
 
-      <center><h6>Logon to Illuminate</h6></center>
-
-      <section class="main-section">
-        <div class="row">
-          <div class="small-12 medium-12 large-9 columns">
-            <div class="panel">
-              <form>
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>User Name:
-                      <input type="text" placeholder="user name here..." />
-                    </label>
+                <label>Password
+                  <input type="password" placeholder="password">
+                </label>
+                <div class="row clearfix">
+                  <div class="small-12 medium-6 large-6 columns left">
+                    <p class="signup-link">Not a user? <a href="signup.html">Sign up!</a></p>
+                  </div>
+                  <div class="small-12 medium-6 large-6 columns right">
+                    <a href="#" class="small button right signup-link">Log In</a>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>Password:
-                      <input type="password" placeholder="enter password here..." /><!-- http://www.echoecho.com/htmlforms06.htm //-->
-                    </label>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="large-4 columns">
-                    <label>Log in as:</label>
-                    <input type="radio" name="instructor" value="instructor" id="pokemonInstructor"><label for="pokemonInstructor">instructor</label>
-                    <input type="radio" name="student" value="student" id="pokemonStudent"><label for="pokemonStudent">student</label>
-                    <a href="index.html" class="small radius button">Clear</a>
-                    <a href="select.html" class="small radius button">Submit</a>
-                  </div>
-                </div>
-              </form>
-              <p><a href="create.html">create new logon</a></p>
-            </div>       
-             <hr />  <!-- horizontal line break -->       
-          </div>          
-        </div><br>
-
-  <!-- FOOTER STARTS HERE ! -->
-  <!-- if we edit the footer, we should make sure it consistent across the website -->
-       
-        <footer class="row">
-          <div class="large-12 columns">
-            <hr>
-            <div class="row">
-              <div class="large-6 columns">
-                <p>&copy; Copyright Critical Success Factors, 2014</p>
-              </div>
-              <div class="large-6 columns">
-              <!-- UNCOMMENT ul & li's BELOW TO CREATE THE TYPICAL FOOTER LINKS, (ie. about, contact us...whatever) -->
-                <!-- <ul class="inline-list right">
-                  <li><a href="#">Link 1</a></li>
-                  <li><a href="#">Link 2</a></li>
-                  <li><a href="#">Link 3</a></li>
-                  <li><a href="#">Link 4</a></li>
-                </ul> -->
-              </div>
+              </fieldset>
             </div>
           </div>
-        </footer>
 
-      </section>
-      <a class="exit-off-canvas"></a>
-
+        </form>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- this stuff needs to be in EVERY FILE! it makes Foundation work!!! :) -->
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
   <script>

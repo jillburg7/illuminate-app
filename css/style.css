@@ -60,6 +60,20 @@ textarea {
 	line-height: 1.2;
 }
 
+fieldset {
+	background-color: #F2F2F2;
+}
+
+.welcome {
+	text-align: center;
+}
+
+.signup-link {
+	margin-bottom: 0px;
+}
+
+/******** COMMENTS *********/
+
 i {
 	/*line-height: 2.0625rem;*/
 	/*padding: 0px 0px 0px 10px;*/
@@ -88,3 +102,5 @@ i {
 {
 
 }
+
+
