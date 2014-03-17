@@ -1,4 +1,4 @@
-q<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8" />
@@ -48,7 +48,7 @@ q<!doctype html>
               <input type="text" placeholder="i.e., CSC 301-0001" />
             </div>
             <div class="medium-2 large-2 columns">
-              <a href="dashboard.html" class="tiny radius button">OK</a>
+              <a href="dashboard.html" id="course-name" class="tiny radius button">OK</a>
             </div>
           </div>
         </form>
@@ -98,8 +98,9 @@ q<!doctype html>
                       <form action="#" method="post">
                         <div>
                         <!-- file chooser -->
-                          <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint"/>
-
+                          <!-- <input id="myfile" name="myfile" type="file" accept="application/pdf,application/vnd.ms-powerpoint"/> -->
+                          <input type="file" id="input">
+                          
                           <!-- lecture selector box -->
                           <div class="row">
                             <div class="large-12 columns">
