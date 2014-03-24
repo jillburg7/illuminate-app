@@ -106,6 +106,34 @@ i {
 	padding-left: 7px;
 }
 
+.big-button {
+	/*border-style: solid;*/
+  /*border-width: 1px;*/
+  cursor: pointer;
+  /*font-family: inherit;*/
+  /*font-weight: bold;*/
+  line-height: 1;
+  margin: 0 0 1.53846em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.69231em;
+  padding-right: 1.38462em;
+  padding-bottom: 0.76923em;
+  padding-left: 1.38462em;
+  font-size: 1em;
+  padding-top: 0.69231em;
+  padding-bottom: 0.76923em;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100%;
+  /*background-color: black;*/
+  /*border-color: black;*/
+  color: white;
+  margin-bottom: .5em;
+}
+}
 .fi-x .fi-list .fi-alert .fi-info .fi-eye .fi-projection-screen
 .fi-upload .fi-download .fi-page-export .fi-page-csv .fi-graph-bar .fi-graph-horizontal
 .fi-results-demographics .fi-results .fi-thumbnails 
