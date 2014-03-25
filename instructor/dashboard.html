@@ -45,7 +45,7 @@
 							<input type="text" name="course-name" id="course-name" placeholder="i.e., CSC 301-0001"  />
 						</div>
 						<div class="medium-2 large-2 columns">
-							<button type="submit" id="add-course" class="tiny radius button">OK</button>
+							<button type="submit" id="add-course" class="big-button">OK</button>
 						</div>
 					</div>
 				</form>
@@ -64,123 +64,120 @@
 						</dl>
 
 						<div class="tabs-content panel radius">
-							<!-- first panel content -->
-							<div class="content active" id="panel2-1">
 
+							<!-- start first panel -->
+							<div class="content active" id="panel2-1">
 								<div id="noCourses" class="small-12 medium-6 large-6 small-centered columns">
 									<h5 style="text-align:center">You haven't created any courses yet...but it's never too late!</h5>
 									<button href="#" data-reveal-id="createCourseModal" data-reveal class="big-button">Create a Course</button>
 								</div>
-
 							</div>
 							<!-- end first panel -->
 									
-						<!-- start second panel -->
-						<div class="content" id="panel2-2">
-							<!-- <p>Second panel content goes here...</p> -->
+							<!-- start second panel -->
+							<div class="content" id="panel2-2">
+								<!-- form content -->
+								<form action="#" method="POST">
+									<!-- user credentials grouping -->
+									<div class="row">
+										<div class="small-12 medium-12 large-10 small-centered columns">
+											<label>Quiz Identifier
+												<input type="text" placeholder="Favorite Color" />
+											</label>
+
+											<label>Question
+												<input type="text" placeholder="Of the colors below, what is your favorite color?" />
+											</label>
+
+											<label>Fill in possible answers below. Enable the selector next to the correct answer.
+												<br/>Leave answer fields blank if you do not want to have all four possible choices.
+											</label>
+											<!-- multiple-choice: answer A -->
+											<div class="row">
+												<div class="small-2 medium-2 large-2 columns quiz-creation">
+													<input type="radio" name="multipleChoice" value="A" id="A" checked />
+													<label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
+												</div>
+												<div class="small-10 medium-10 large-10 columns end ">
+													<input type="text" placeholder="Blue" />
+												</div>
+											</div>
+
+											<!-- multiple-choice: answer B -->
+											<div class="row">
+												<div class="small-2 medium-2 large-2 columns quiz-creation">
+													<input type="radio" name="multipleChoice" value="B" id="B" />
+													<label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
+												</div>
+												<div class="small-10 medium-10 large-10 columns end ">
+													<input type="text" placeholder="Yellow" />
+												</div>
+											</div>
+
+											<!-- multiple-choice: answer C -->
+											<div class="row">
+												<div class="small-2 medium-2 large-2 columns quiz-creation">
+													<input type="radio" name="multipleChoice" value="C" id="C" />
+													<label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
+												</div>
+												<div class="small-10 medium-10 large-10 columns end ">
+													<input type="text" placeholder="Green" />
+												</div>
+											</div>
+
+											<!-- multiple-choice: answer D -->
+											<div class="row">
+												<div class="small-2 medium-2 large-2 columns quiz-creation">
+													<input type="radio" name="multipleChoice" value="D" id="D" />
+													<label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
+												</div>
+												<div class="small-10 medium-10 large-10 columns end ">
+													<input type="text" placeholder="Red" />
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row clearfix">
+										<div class="small-12  medium-12 large-10  small-centered columns">
+												<!-- <button href="#" class="nice-button left" style="width: 25%;">Cancel</button> -->
+												<button type="submit" href="#" class="nice-button right" style="width: 25%;">Save</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- end second panel -->
 							
-							<!-- form content -->
-							<form action="#" method="POST">
-								<!-- user credentials grouping -->
-								<div class="row ">
-									<div class="small-12 medium-12 large-12 small-centered columns">
-										<label>Quiz Identifier
-											<input type="text" placeholder="Favorite Color" />
-										</label>
+							<!-- start third panel -->
+							<div class="content" id="panel2-3">
+								<h3>Download Lecture Data?</h3>
+								<p>
+									<a href="#" class="medium secondary button" data-reveal-id="notifyDownload" data-reveal>Download as .csv</a>
+									<a href="#" class="medium secondary button" data-reveal-id="notifyEmail" data-reveal>Email .cvs</a>
+								</p>
 
-										<label>Question
-											<input type="text" placeholder="Of the colors below, what is your favorite color?" />
-										</label>
-
-										<label>Fill in possible answers below. Enable the selector next to the correct answer.
-											<br/>Leave answer fields blank if you do not want to have all four possible choices.
-										</label>
-										<!-- multiple-choice: answer A -->
-										<div class="row">
-											<div class="small-2 medium-2 large-2 columns quiz-creation">
-												<input type="radio" name="multipleChoice" value="A" id="A" checked />
-												<label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
-											</div>
-											<div class="small-10 medium-10 large-10 columns end ">
-												<input type="text" placeholder="Blue" />
-											</div>
-										</div>
-
-										<!-- multiple-choice: answer B -->
-										<div class="row">
-											<div class="small-2 medium-2 large-2 columns quiz-creation">
-												<input type="radio" name="multipleChoice" value="B" id="B" />
-												<label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
-											</div>
-											<div class="small-10 medium-10 large-10 columns end ">
-												<input type="text" placeholder="Yellow" />
-											</div>
-										</div>
-
-										<!-- multiple-choice: answer C -->
-										<div class="row">
-											<div class="small-2 medium-2 large-2 columns quiz-creation">
-												<input type="radio" name="multipleChoice" value="C" id="C" />
-												<label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
-											</div>
-											<div class="small-10 medium-10 large-10 columns end ">
-												<input type="text" placeholder="Green" />
-											</div>
-										</div>
-
-										<!-- multiple-choice: answer D -->
-										<div class="row">
-											<div class="small-2 medium-2 large-2 columns quiz-creation">
-												<input type="radio" name="multipleChoice" value="D" id="D" />
-												<label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
-											</div>
-											<div class="small-10 medium-10 large-10 columns end ">
-												<input type="text" placeholder="Red" />
-											</div>
-										</div>
-									</div>
+								<!-- Modal fly-in/pop-up thingy-->
+								<div id="notifyDownload" class="reveal-modal small" data-reveal>
+									<h5>Your file has been downloaded to the default location!</h5>
+									<a class="close-reveal-modal">&#215;</a>
 								</div>
-
-								<div class="row clearfix">
-									<div class="small-12  medium-12 large-12 small-centered columns ">
-										<section class="right">
-											<!-- <a href="#" class="small button">Cancel</a> -->
-											<a href="#" class="small button">Save</a>
-										</section>
-									</div>
+								<div id="notifyEmail" class="reveal-modal small" data-reveal>
+									<h5>Your email has been sent!</h5>
+									<a class="close-reveal-modal">&#215;</a>
 								</div>
-							</form>
-						</div>
-						<!-- end second panel -->
-						
-						<!-- start thired panel -->
-						<div class="content" id="panel2-3">
-							<!--Third panel content goes here...-->
-							<h3>Download Lecture Data?</h3>
-							<p>
-								<a href="#" class="medium secondary button" data-reveal-id="notifyDownload" data-reveal>Download as .csv</a>
-								<a href="#" class="medium secondary button" data-reveal-id="notifyEmail" data-reveal>Email .cvs</a>
-							</p>
-
-							<!-- Modal fly-in/pop-up thingy-->
-							<div id="notifyDownload" class="reveal-modal small" data-reveal>
-								<h5>Your file has been downloaded to the default location!</h5>
-								<a class="close-reveal-modal">&#215;</a>
+								<!-- End Modal fly-in/pop-up thingy-->
 							</div>
-							<div id="notifyEmail" class="reveal-modal small" data-reveal>
-								<h5>Your email has been sent!</h5>
-								<a class="close-reveal-modal">&#215;</a>
-							</div>
-							<!-- End Modal fly-in/pop-up thingy-->
-						</div>
+							<!-- end third panel -->
 
-						<div class="content" id="panel2-4">
-							<p>Fourth panel content goes here...</p>
+							<!-- start fourth panel -->
+							<div class="content" id="panel2-4">
+								<p>Fourth panel content goes here...</p>
+							</div>
+							<!-- end fourth panel -->
 						</div>
 					</div>
-				</div>
-			</div><br>
-			<a class="exit-off-canvas"></a>
+				</div><br>
+				<a class="exit-off-canvas"></a>
 			</section>
 		</div>
 	</div>
@@ -190,6 +187,7 @@
 	<script>
 		$(document).foundation();
 	</script>
-	<script src="../js/script.js"></script>
+	<script src="../js/dash_script.js"></script>
+	<!-- <script src="../js/script.js"></script> -->
 </body>
 </html>

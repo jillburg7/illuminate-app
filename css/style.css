@@ -9,6 +9,9 @@ textarea {
 .question-panel {
 	padding: 0px 5px;
 }
+.question-panel .panel, .question-panel .content {
+	padding: 10px;
+}
 
 .question-panel .button {
 	padding: 7px 7px;
@@ -110,7 +113,7 @@ i {
 	/*border-style: solid;*/
   /*border-width: 1px;*/
   cursor: pointer;
-  /*font-family: inherit;*/
+  font-family: inherit;
   /*font-weight: bold;*/
   line-height: 1;
   margin: 0 0 1.53846em;
@@ -122,7 +125,7 @@ i {
   padding-right: 1.38462em;
   padding-bottom: 0.76923em;
   padding-left: 1.38462em;
-  font-size: 1em;
+  font-size: 1rem;
   padding-top: 0.69231em;
   padding-bottom: 0.76923em;
   padding-right: 0px;
@@ -133,7 +136,46 @@ i {
   color: white;
   margin-bottom: .5em;
 }
+
+/*#ask-question .button {*/
+.nice-button {
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  margin: 0 0 1.53846em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  padding-top: 0.69231em;
+  padding-right: 1.38462em;
+  padding-bottom: 0.76923em;
+  padding-left: 1.38462em;
+  font-size: 0.95rem;
+  padding-top: 0.69231em;
+  padding-bottom: 0.76923em;
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 48%;
+  /*background-color: black;*/
+  /*border-color: black;*/
+  color: white;
+  margin-bottom: .5em;
 }
+
+.incoming {
+	list-style-type: none;
+	margin: 0;
+}
+
+.incoming li h6 {
+	margin: 6px 0 0 0;
+}
+
+.incoming li h4 {
+	margin: -2px 0 10px 0;
+}
+
 .fi-x .fi-list .fi-alert .fi-info .fi-eye .fi-projection-screen
 .fi-upload .fi-download .fi-page-export .fi-page-csv .fi-graph-bar .fi-graph-horizontal
 .fi-results-demographics .fi-results .fi-thumbnails 

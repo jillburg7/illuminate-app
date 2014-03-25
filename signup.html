@@ -1,114 +1,114 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sign up</title>
+	<title>Sign up</title>
 
-  <link rel="stylesheet" href="css/foundation.css" />
-  <link rel="stylesheet" href="css/foundation-icons.css" />
-  <link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/foundation-icons.css" />
+	<link rel="stylesheet" href="css/style.css"/>
 
-  <script src="js/vendor/modernizr.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
 
-  <div class="off-canvas-wrap">
-    <div class="inner-wrap">
+	<div class="off-canvas-wrap">
+		<div class="inner-wrap">
 
-      <!-- Top Nav Bar -->
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <a href="index.html"><i class="fi-lightbulb"></i></a>
-          </li>
-        </ul>
-      </nav>
+			<!-- Top Nav Bar -->
+			<nav class="top-bar" data-topbar>
+				<ul class="title-area">
+					<li class="name">
+						<a href="index.html"><i class="fi-lightbulb"></i></a>
+					</li>
+				</ul>
+			</nav>
 
-      <!-- CONTENT STARTS HERE ! -->
-      <section class="main-section">
-        <div class="row">
-          <div class="large-12 small-centered columns">
-            <h1 class="text-center">Welcome to Illuminate</h1>
-          </div>
-        </div>
+			<!-- CONTENT STARTS HERE ! -->
+			<section class="main-section">
+				<div class="row">
+					<div class="large-12 small-centered columns">
+						<h1 class="text-center">Welcome to Illuminate</h1>
+					</div>
+				</div>
 
-        <div class="row">
-          <div class="small-11 small-centered columns">
-          
-            <!-- form content -->
-            <form action="#" method="POST">
-              <!-- user information grouping -->
-              <div class="row">
-                <div class="small-12 medium-6 large-6 columns">
-                  <fieldset>
-                    <legend>Select a User Type</legend>
-                    <input type="radio" name="userType" value="0" id="student" checked>
-                    <label for="student">Student</label>
-                    
-                    <input type="radio" name="userType" value="1" id="instructor">
-                    <label for="instructor">Instructor</label>
-                  </fieldset>
-                </div>
-              </div>
+				<div class="row">
+					<div class="small-11 small-centered columns">
+						
+						<!-- form content -->
+						<form action="insert.php" method="POST">
+							<!-- user information grouping -->
+							<div class="row">
+								<div class="small-12 medium-6 large-6 columns">
+									<fieldset>
+										<legend>Select a User Type</legend>
+										<input type="radio" name="userType" value="0" id="student" checked>
+										<label for="student">Student</label>
+										
+										<input type="radio" name="userType" value="1" id="instructor">
+										<label for="instructor">Instructor</label>
+									</fieldset>
+								</div>
+							</div>
 
-              <!-- user credentials grouping -->
-              <div class="row">
-                <div class="small-12 medium-6 large-6 columns">
-                  <fieldset>
+							<!-- user credentials grouping -->
+							<div class="row">
+								<div class="small-12 medium-6 large-6 columns">
+									<fieldset>
 
-                    <legend>Log In Credentials</legend>
-                    <label>Email Address
-                      <input type="email" placeholder="user@email.com" required>
-                    </label>
+										<legend>Log In Credentials</legend>
+										<label>Email Address
+											<input type="email" name="email" placeholder="user@email.com" required>
+										</label>
 
-                    <label>Password
-                      <input type="password" placeholder="password" required>
-                    </label>
+										<label>Password
+											<input type="password" name="password1" id="password1" placeholder="password" required>
+										</label>
 
-                    <label>Confirm Password
-                      <input type="password" placeholder="password" required>
-                    </label>
-                  </fieldset>
-                </div>
+										<label>Confirm Password
+											<input type="password" name="password2" id="password2" placeholder="password" required>
+										</label>
+									</fieldset>
+								</div>
 
-                <!-- user information grouping -->
-                <div class="small-12 medium-6 large-6 columns">
-                  <fieldset>
-                    <legend>Additional Information</legend>
+								<!-- user information grouping -->
+								<div class="small-12 medium-6 large-6 columns">
+									<fieldset>
+										<legend>Additional Information</legend>
 
-                    <label>Student ID #
-                      <input type="text" placeholder="100123456" required>
-                    </label>
-                    <label>First Name
-                      <input type="text" placeholder="John" required>
-                    </label>
-                    <label>Last Name
-                      <input type="text" placeholder="Smith" required>
-                    </label>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row clearfix">
-                <div class="small-12  medium-12 large-12 small-centered columns right">
-                  <a href="index.html" class="small secondary button ">Cancel</a>
-                  <button type="submit" href="index.html" class="small secondary button">Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-      <a class="exit-off-canvas"></a>
-    </div>
-  </div>
+										<label>Student ID #
+											<input type="text" name="studentID" placeholder="100123456" required>
+										</label>
+										<label>First Name
+											<input type="text" name="firstname" placeholder="John" required>
+										</label>
+										<label>Last Name
+											<input type="text" name="lastname" placeholder="Smith" required>
+										</label>
+									</fieldset>
+								</div>
+							</div>
+							<div class="row clearfix">
+								<div class="small-12  medium-12 large-12 small-centered columns right">
+									<a href="index.html" class="small secondary button ">Cancel</a>
+									<button type="submit" href="index.html" id="register" class="small secondary button">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<a class="exit-off-canvas"></a>
+		</div>
+	</div>
 
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  <script src="js/script.js"></script>
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+	<script src="js/script.js"></script>
 </body>
 </html>
