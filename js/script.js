@@ -2,7 +2,7 @@
 
 $("#register").submit(function() {
 	if ($("#password1").val() != $("#password2").val()) {
-		 & give focus to pw field
+		// give focus to pw field
 		$("#password1").val('');
 		$("#password2").val('');
     	$('#password1').focus();
