@@ -19,3 +19,4 @@ $("#register").submit(function() {
 	}
 });
 
+//once user info has been added to database -- needs to redirect to index.html
