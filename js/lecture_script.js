@@ -14,16 +14,32 @@
 $(document).ready(function() {
   $.getJSON('../test-data.json', function(data) {
     var output = '<ul class="incoming">';
+    var num = 0;
     $.each(data, function(key, val) {
       // if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
-        output += '<li>';
+        output += '<li id="q'+ num +'">';
         output += '<h6>'+ val.name +'</h6>';
         output += '<h4><small>'+ val.question +'</small></h4>';
         output += '</li>';
+        num++;
       // }
     });
     output += '</ul>';
-    // $('#panel22').html(output);
     $('#panel12').html(output);
+    notificationBadge(num);
   }); //getJSON
+  /* toggles displaying the current set of questions */
+  $("#notification-count").click(function () {
+    $("#msgs > dd:first > div").toggle();
+  }); 
 });
+
+/*
+* Applies a number count & notification badge to display the current number
+* of 'unopened' notifications (once clicked, all current notifications are 
+* marked as opened/read)
+*/
+function notificationBadge(num) {
+  $("#notification-count").append('   <span class="label round">' + num + '</span>');
+} //notificationBadge
+

@@ -22,10 +22,10 @@ $(document).on('opened', '[data-reveal]', function () {
 * Calls createNewCourse() to generate HTML and push into course array
 */
 $("#add-course").click(function() { //anonymous function
-  if(x.length === 0) {
-    $("#noCourses").remove();
-  }
   if ($('#course-name').val() != '') {
+    if(x.length === 0) {
+      $("#noCourses").remove();
+    }
     var name = $('#course-name').val();
     //clear field
     $('#course-name').val('');
