@@ -17,5 +17,4 @@ if (!mysqli_query($con,$sql))
   }
 echo include 'index.html';
 mysqli_close($con);
-echo '<br/><a href="index.html">Submit</a>';
 ?>
