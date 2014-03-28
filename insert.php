@@ -15,7 +15,7 @@ if (!mysqli_query($con,$sql))
   {
   die('Error: ' . mysqli_error($con));
   }
-echo include 'index.html';
+echo "1 record added";
+
 mysqli_close($con);
-echo '<br/><a href="index.html">Submit</a>';
 ?>
