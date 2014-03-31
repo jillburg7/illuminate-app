@@ -15,6 +15,7 @@ if (!mysqli_query($con,$sql))
   {
   die('Error: ' . mysqli_error($con));
   }
-echo include 'index.html';
+
+  echo header("Location:index.html");
 mysqli_close($con);
 ?>
