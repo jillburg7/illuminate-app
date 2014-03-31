@@ -32,3 +32,4 @@ function pwCriteria(pw) {
 }
 
 //once user info has been added to database -- needs to redirect to index.html
+// window.location.href = "index.html";

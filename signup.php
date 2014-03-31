@@ -9,7 +9,7 @@ if (mysqli_connect_errno())
 $sql="INSERT INTO CreateLogin (userID, email, password, type, firstName, lastName, studentID)
 
 VALUES
-(null,'$_POST[email] ', '$_POST[password1]', '$_POST[userType]','$_POST[firstname]','$_POST[lastname]', $_POST[studentID])";
+(null,'$_POST[email]', '$_POST[password1]', '$_POST[userType]','$_POST[firstname]','$_POST[lastname]', $_POST[studentID])";
 
 if (!mysqli_query($con,$sql))
   {

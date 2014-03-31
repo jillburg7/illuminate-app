@@ -6,8 +6,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$result = mysqli_query($con,"SELECT * FROM CreateLogin
-WHERE email='jill@gmail.com'");
+$result = mysqli_query($con,"SELECT * FROM CreateLogin WHERE email='jill@gmail.com'");
 
 while($row = mysqli_fetch_array($result))
   {

@@ -30,7 +30,10 @@ $(document).ready(function() {
   }); //getJSON
   /* toggles displaying the current set of questions */
   $("#notification-count").click(function () {
+    // if()
     $("#msgs > dd:first > div").toggle();
+    $("#msgs > dd:first > div").toggleClass("active");
+    $("#msgs > dd:first").toggleClass("active");
   }); 
 });
 

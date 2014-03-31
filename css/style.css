@@ -30,19 +30,11 @@ textarea {
 	color: #FFF;
 }
 
-#panel2-1 {
-	padding-right: 15px;
+#panel2-1 .panel {
+	margin: 5px;  
+  font-size: .90rem;
+  line-height: 1.2;
 }
-
-#panel2-1 img {
-	margin-bottom: 10px;
-}
-
-#panel2-1 {
-	font-size: .80rem;
-	line-height: 1.2;
-}
-
 .lecture-desc p { 
 	font-size: .85rem;
 	line-height: 1.3;
