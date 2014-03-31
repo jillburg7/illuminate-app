@@ -32,16 +32,15 @@ $type = '';
 			//else {Invalid email/password combination.}
 		}
 	}
-		$url = "localhost:8888/";		
+		// echo $_SERVER['SERVER_NAME'];
 
 	//next page delievered depends on a user's type (0 or 1)
 		if ($type == 0) {
-			// echo http_build_url($url, array ("path" => "student/dashboard.html"), HTTP_URL_JOIN_PATH);
-			echo include 'student/dashboard.html';
-			mysqli_close($con);
+			echo header('Location: /student/dashboard.html');
+			// mysqli_close($con);
 		}
 		if ($type == 1) {
-			echo include 'instructor/dashboard.html';
-			mysqli_close($con);
+			echo header('Location: /instructor/dashboard.html');
+			// mysqli_close($con);
 		}
 ?>
