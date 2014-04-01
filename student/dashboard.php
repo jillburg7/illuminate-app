@@ -5,19 +5,28 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $result = mysqli_query($con,"SELECT * FROM CreateLogin WHERE userID=10");
-
+  $result = mysqli_query($con,"SELECT * FROM UserDashBoard WHERE userID=10");
+     $names =array("","","");
+  int i =0;
   if(empty($result)) {
-    echo "Invalid email/password combination.";
+    echo "could not grab";
   } 
   else {
     while($row = mysqli_fetch_array($result)) {
-      
-        $userID = $row['userID'];
-      
-      //else {Invalid email/password combination.}
-    }
+        $classCode = $row['classCode'];
+        $grabNames = mysqli_query($con,"SELECT * FROM ClassLecture WHERE classCode = 'classCode");
+         if(empty($result)) {
+          echo "could not grab";
+            }
+            else{
+              while($row = mysqli_fetch_array($result)) {
+              $names[i]=$row['className'];
+              i++;
+                     }
+                 }
+
   }
+}
   mysqli_close($con);
 
 ?>
