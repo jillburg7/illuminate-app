@@ -24,9 +24,16 @@
               i++;
                      }
                  }
-
-  }
+//One option: http://www.tutorialspoint.com/php/php_arrays.htm;
+//Below is some working code from stackoverflow : http://stackoverflow.com/questions/3045619/need-to-store-values-from-foreach-loop-into-array
+//         $items = array();
+//foreach($group_membership as $username) {
+// $items[] = $username;
 }
+
+print_r($items);
+  }
+
   mysqli_close($con);
 
 ?>
