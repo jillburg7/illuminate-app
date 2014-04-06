@@ -21,7 +21,7 @@ $(document).ready(function() {
 				output += '<li id="q'+ num +'">';
 				output += '<h6>'+ val.name +'</h6>';
 				output += '<h4><small>'+ val.question +'</small></h4>';
-				output += '<div class="statuschanger" ><input type="radio" name="status'+ num +'" value="default" checked /><label for="default">Not answered</label><br/><input type="radio" name="status'+ num +'" value="save"/><label for="save">Save for later</label><br/><input type="radio" name="status'+ num +'" value="answered"/><label for="answered">Answered</label></div>' + '</li>';
+				output += '<div class="statuschanger"><input type="radio" name="status'+ num +'" value="default" id="default'+ num +'" checked /><label for="default'+ num +'">Not answered</label><br/><input type="radio" name="status'+ num +'" value="save" id="save'+ num +'"/><label for="save'+ num +'">Save for later</label><br/><input type="radio" name="status'+ num +'" value="answered" id="answered'+ num +'"/><label for="answered'+ num +'">Answered</label></div>' + '</li>';
 				num++;
 			}
 		});
