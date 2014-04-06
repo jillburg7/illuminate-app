@@ -26,6 +26,14 @@ textarea {
 	float: right;
 }
 
+.statuschanger {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
 .title > a{
 	color: #FFF;
 }
