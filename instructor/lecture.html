@@ -84,7 +84,7 @@
 
 				<section class="main-section">
 					<div class="row">
-						<div class="small-12 medium-12 large-9 columns">
+						<div id="lecture"> <!-- class="small-12 medium-12 large-9 columns"> -->
 
 							<!-- Desktop Slider -->
 							<div class="hide-for-small">
@@ -129,14 +129,14 @@
 										<label>Notes
 											<textarea placeholder="Enter notes here..."></textarea>
 										</label>
-										<button style="width: 25%;" type="submit" href="" class="nice-button right">Save</button>
+										<button style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
 									</div>
 								</div>
 							</form>
 						</div>
 
 						<!-- LARGE VIEW ACCORDION DISPLAY -->
-						<div class="show-for-large-up large-3 columns question-panel">
+						<div id="slider" hidden> <!-- class="show-for-large-up large-3 columns question-panel"> -->
 							<div class="panel">
 								<h4>Incoming Questions</h4>
 								<dl id="msgs" class="accordion" data-accordion>
@@ -187,7 +187,6 @@
 	<script>
 		$(document).foundation();
 	</script>
-	<!-- <script src="../js/script.js"></script> -->
 	<script src="../js/lecture_instructor.js"></script>
 </body>
 </html>

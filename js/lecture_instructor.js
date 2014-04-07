@@ -14,7 +14,10 @@ $(document).ready(function() {
 	$.getJSON('../test-data.json', function(data) {
 		var output = '<ul class="incoming">';
 		var num = 0;
-		var re = new RegExp("fly");
+
+		var searchString = "fly";
+		var re = new RegExp(searchString);
+
 		$.each(data, function(key, val) {
 			// if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {}
 			if (val.question.search(re) != -1) {
@@ -27,11 +30,23 @@ $(document).ready(function() {
 		});
 		output += '</ul>';
 		$('#panel12').html(output);
+		$("#msgs > dd:first > a").html("Keyword:  " + searchString);
 		notificationBadge(num);
 	}); //getJSON
+
 	/* toggles displaying the current set of questions */
 	$("#notification-count").click(function () {
-		// if()
+		$("#slider").show();
+		$("#lecture").toggleClass("small-12 medium-9 large-9 columns");
+		$("#slider").toggleClass("small-12 medium-3 large-3 columns question-panel");
+
+		// $("#msgs > dd:first > div").toggle();
+		// $("#msgs > dd:first > div").toggleClass("active");
+		// $("#msgs > dd:first").toggleClass("active");
+		// $(".incoming > li").children(".statuschanger").removeClass("active");
+		// status();
+	});
+	$("#msgs > dd:first > a").click(function () {
 		$("#msgs > dd:first > div").toggle();
 		$("#msgs > dd:first > div").toggleClass("active");
 		$("#msgs > dd:first").toggleClass("active");

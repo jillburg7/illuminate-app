@@ -12,29 +12,30 @@
 * -> [Lastly, clicking into view -> modify status options (radios)]
 */
 $(document).ready(function() {
-  // $.getJSON('../test-data.json', function(data) {
-  //   var output = '<ul class="incoming">';
-  //   var num = 0;
-  //   $.each(data, function(key, val) {
-  //     // if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
-  //       output += '<li id="q'+ num +'">';
-  //       output += '<h6>'+ val.name +'</h6>';
-  //       output += '<h4><small>'+ val.question +'</small></h4>';
-  //       output += '</li>';
-  //       num++;
-  //     // }
-  //   });
-  //   output += '</ul>';
-  //   $('#panel12').html(output);
-  //   notificationBadge(num);
-  // }); //getJSON
-  // /* toggles displaying the current set of questions */
-  // $("#notification-count").click(function () {
-  //   $("#msgs > dd:first > div").toggle();
-  //   $("#msgs > dd:first > div").toggleClass("active");
-  //   $("#msgs > dd:first").toggleClass("active");
-  // }); 
-
+	// $.getJSON('../test-data.json', function(data) {
+	//   var output = '<ul class="incoming">';
+	//   var num = 0;
+	//   $.each(data, function(key, val) {
+	//     // if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
+	//       output += '<li id="q'+ num +'">';
+	//       output += '<h6>'+ val.name +'</h6>';
+	//       output += '<h4><small>'+ val.question +'</small></h4>';
+	//       output += '</li>';
+	//       num++;
+	//     // }
+	//   });
+	//   output += '</ul>';
+	//   $('#panel12').html(output);
+	//   notificationBadge(num);
+	// }); //getJSON
+	// /* toggles displaying the current set of questions */
+	// $("#notification-count").click(function () {
+	//   $("#msgs > dd:first > div").toggle();
+	//   $("#msgs > dd:first > div").toggleClass("active");
+	//   $("#msgs > dd:first").toggleClass("active");
+	// }); 
+	
+	charCounter();
 });
 
 /*
@@ -43,6 +44,26 @@ $(document).ready(function() {
 * marked as opened/read)
 */
 function notificationBadge(num) {
-  $("#notification-count").append('   <span class="label round">' + num + '</span>');
+	$("#notification-count").append('   <span class="label round">' + num + '</span>');
 } //notificationBadge
 
+function charCounter() {
+	$("#question").keyup(function() {
+		var text = $("#question").val();
+		var count = 255 - text.length;
+		if (count <= 0) {
+			//need to stop allowing text to be entered..any keypress won't be 'logged' as a char in textarea
+		} else {
+			$("#char-counter").html('' + count + " characters left");
+		}
+	});
+	$("#question-m").keyup(function() {
+		var text = $("#question-m").val();
+		var count = 255 - text.length;
+		if (count <= 0) {
+			//need to stop allowing text to be entered..any keypress won't be 'logged' as a char in textarea
+		} else {
+			$("#char-counter-m").html('' + count + " characters left");
+		}
+	});
+}

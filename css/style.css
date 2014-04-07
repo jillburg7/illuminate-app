@@ -2,6 +2,15 @@
 	padding-top: 20px;
 }
 
+#question, #question-m {
+  margin-bottom: 7px;
+}
+
+#char-counter, #char-counter-m {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
 textarea {
 	min-height: 64px;
 }
