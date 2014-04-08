@@ -3,12 +3,12 @@
 }
 
 #question, #question-m {
-  margin-bottom: 7px;
+	margin-bottom: 7px;
 }
 
 #char-counter, #char-counter-m {
-  font-size: 0.8rem;
-  margin-bottom: 10px;
+	font-size: 0.8rem;
+	margin-bottom: 10px;
 }
 
 textarea {
@@ -36,11 +36,20 @@ textarea {
 }
 
 .statuschanger {
-  display: none;
+	display: none;
 }
 
 .active {
-  display: block;
+	display: block;
+/*	-webkit-animation: myanim .5s;
+	-moz-animation: myanim 1s;
+	-o-animation: myanim 1s;
+	animation: myanim 1s;
+
+	-webkit-transition: height 0.3s ease-out;
+	-moz-transition: height 0.3s ease-out;
+	-o-transition: height 0.3s ease-out;
+	transition: height 0.3s ease-out;*/
 }
 
 .title > a{
@@ -49,8 +58,8 @@ textarea {
 
 #panel2-1 .panel {
 	margin: 5px;  
-  font-size: .90rem;
-  line-height: 1.2;
+	font-size: .90rem;
+	line-height: 1.2;
 }
 .lecture-desc p { 
 	font-size: .85rem;
@@ -120,56 +129,56 @@ i {
 
 .big-button {
 	/*border-style: solid;*/
-  /*border-width: 1px;*/
-  cursor: pointer;
-  font-family: inherit;
-  /*font-weight: bold;*/
-  line-height: 1;
-  margin: 0 0 1.53846em;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
-  padding-top: 0.69231em;
-  padding-right: 1.38462em;
-  padding-bottom: 0.76923em;
-  padding-left: 1.38462em;
-  font-size: 1rem;
-  padding-top: 0.69231em;
-  padding-bottom: 0.76923em;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 100%;
-  /*background-color: black;*/
-  /*border-color: black;*/
-  color: white;
-  margin-bottom: .5em;
+	/*border-width: 1px;*/
+	cursor: pointer;
+	font-family: inherit;
+	/*font-weight: bold;*/
+	line-height: 1;
+	margin: 0 0 1.53846em;
+	position: relative;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	padding-top: 0.69231em;
+	padding-right: 1.38462em;
+	padding-bottom: 0.76923em;
+	padding-left: 1.38462em;
+	font-size: 1rem;
+	padding-top: 0.69231em;
+	padding-bottom: 0.76923em;
+	padding-right: 0px;
+	padding-left: 0px;
+	width: 100%;
+	/*background-color: black;*/
+	/*border-color: black;*/
+	color: white;
+	margin-bottom: .5em;
 }
 
 /*#ask-question .button {*/
 .nice-button {
-  cursor: pointer;
-  font-family: inherit;
-  line-height: 1;
-  margin: 0 0 1.53846em;
-  position: relative;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  padding-top: 0.69231em;
-  padding-right: 1.38462em;
-  padding-bottom: 0.76923em;
-  padding-left: 1.38462em;
-  font-size: 0.95rem;
-  padding-top: 0.69231em;
-  padding-bottom: 0.76923em;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 48%;
-  /*background-color: black;*/
-  /*border-color: black;*/
-  color: white;
-  margin-bottom: .5em;
+	cursor: pointer;
+	font-family: inherit;
+	line-height: 1;
+	margin: 0 0 1.53846em;
+	position: relative;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	padding-top: 0.69231em;
+	padding-right: 1.38462em;
+	padding-bottom: 0.76923em;
+	padding-left: 1.38462em;
+	font-size: 0.95rem;
+	padding-top: 0.69231em;
+	padding-bottom: 0.76923em;
+	padding-right: 0px;
+	padding-left: 0px;
+	width: 48%;
+	/*background-color: black;*/
+	/*border-color: black;*/
+	color: white;
+	margin-bottom: .5em;
 }
 
 .incoming {
@@ -199,5 +208,24 @@ i {
 {
 
 }
+/*
+@-webkit-keyframes myanim {
+	0% { opacity: 0.3;}
+	100% { opacity: 1.0;}
+}
 
+@-moz-keyframes myanim {
+	0% { opacity: 0.3;}
+	100% { opacity: 1.0;}
+}
 
+@-o-keyframes myanim {
+	0% { opacity: 0.3;}
+	100% { opacity: 1.0;}
+}
+
+@keyframes myanim {
+	0% { opacity: 0.3;}
+	100% { opacity: 1.0;}
+}
+*/

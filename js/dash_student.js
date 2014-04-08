@@ -8,11 +8,11 @@ var x = [];
 
 //focuses input field in modal to create a new course
 $(document).on('opened', '[data-reveal]', function () {
-  $('#course-name').focus();
-  $( "#target" ).submit(function(event) {
-      // alert( "Handler for .submit() called." );
-      event.preventDefault();
-  });
+	$('#course-name').focus();
+	$( "#target" ).submit(function(event) {
+			// alert( "Handler for .submit() called." );
+			event.preventDefault();
+	});
 });
 
 /**
@@ -22,18 +22,21 @@ $(document).on('opened', '[data-reveal]', function () {
 * Calls createNewCourse() to generate HTML and push into course array
 */
 $("#add-course").click(function() { //anonymous function
-  if ($('#course-name').val() != '') {
-    if(x.length === 0) {
-      $("#noCourses").remove();
-    }
-    var name = $('#course-name').val();
-    //clear field
-    $('#course-name').val('');
-    $('#createCourseModal').foundation('reveal', 'close');
-    createNewCourse(name);
-  } else {
-    $('#course-name').focus();
-  }
+	if ($('#course-name').val() != '') {
+		if(x.length === 0) {
+			//previously had no active courses;
+			$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
+			$(".main-section > .row > .large-12.columns").removeAttr("hidden");
+		}
+		var name = $('#course-name').val();	//name in field = course name
+		$('#course-name').val('');	//clear field
+		$('#addCourseModal').foundation('reveal', 'close');
+		addNewCourse(name);
+		// $('#course-tab-details > .content.active h2').html(name);
+	} else {
+		// Field is empty: give focus back to the input box
+		$('#course-name').focus();
+	}
 });
 
 /* 
@@ -41,27 +44,42 @@ $("#add-course").click(function() { //anonymous function
 * Pushes new course into an array of created courses,
 *   Max capicity limit of 5 courses
 */
-var createNewCourse = function(cname) {
-  if (x.length < 5) {
-    // index of course panel & contents
-    var id = "course" + x.length;
+var addNewCourse = function(cname) {
+	if (x.length < 5) {
+		// index of course panel & contents
+		var id = "course" + x.length;
 
-    var panel = '<div class="row panel" id="' + id + '">' + '<a href="lecture.html">';
-    panel += '<h5 >Course Name: ' + cname + '</h5>';
-    panel += '<h6 >Course ID: ' + randomString() + '</h6>';
-    panel += '</a>' + '</div>';
+		// clone dd.template
+		var tab = $('#course-tab-titles dd.template').clone();
+		$(tab).removeAttr("hidden").removeClass("template");
+		// clone div.template (content for tab)
+		var content = $('#course-tab-details div.template').clone();
+		$(content).removeAttr("hidden").removeClass("template");
 
-    if(x.length === 0) {
-      $("#panel2-1").append(panel);
-    } else {
-      $("#panel2-1 > div:first-child").before(panel);
-    }
-    var course_id = '#' + id; 
-    x.push(course_id);
-  }
-  else {
-    console.info("Cannot add anymore courses at this time!");
-  }
+		if(x.length === 0) {
+			//add tabs for number of valid courses
+			$(tab).addClass("active");
+			$(content).addClass("active");
+		} else {
+			//REMOVE ACTIVE TAGS ON ALL OTHER TABS/TAB CONTENTS!!!!
+			$('#course-tab-titles').children().removeClass("active");
+			$('#course-tab-details').children().removeClass("active");
+			$(tab).addClass("active");
+			$(content).addClass("active");
+		}
+		var course_id = '#' + id; 
+		$(tab).html('<a href="' + course_id + '">Course ID</a>');	
+		$(tab).appendTo('#course-tab-titles');
+
+		$(content).prop("id", id);
+		$(content).appendTo('#course-tab-details');
+		$('#course-tab-details > .content.active h2').html(cname);
+				
+		x.push(course_id);
+	}
+	else {
+		console.info("Cannot add anymore courses at this time!");
+	}
 }
 
 /* 
@@ -69,12 +87,12 @@ var createNewCourse = function(cname) {
 * returns: string containing 6 chars of random capital letters and digits 0-9
 */
 function randomString() {
-  var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var string_length = 6;
-  var randomstring = '';
-  for (var i=0; i<string_length; i++) {
-    var rnum = Math.floor(Math.random() * chars.length);
-    randomstring += chars.substring(rnum,rnum+1);
-  }
-  return randomstring;
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var string_length = 6;
+	var randomstring = '';
+	for (var i=0; i<string_length; i++) {
+		var rnum = Math.floor(Math.random() * chars.length);
+		randomstring += chars.substring(rnum,rnum+1);
+	}
+	return randomstring;
 }

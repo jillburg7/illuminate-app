@@ -14,7 +14,7 @@
 $(document).ready(function() {
 	// $.getJSON('../test-data.json', function(data) {
 	//   var output = '<ul class="incoming">';
-	//   var num = 0;
+	  var num = 1;
 	//   $.each(data, function(key, val) {
 	//     // if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
 	//       output += '<li id="q'+ num +'">';
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	//   });
 	//   output += '</ul>';
 	//   $('#panel12').html(output);
-	//   notificationBadge(num);
+	notificationBadge(num);
 	// }); //getJSON
 	// /* toggles displaying the current set of questions */
 	// $("#notification-count").click(function () {
