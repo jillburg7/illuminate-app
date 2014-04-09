@@ -14,12 +14,24 @@
 textarea {
 	min-height: 64px;
 }
+#slider > .panel {
+	background: #EBEBEB;
+}
 
 .question-panel {
 	padding: 0px 5px;
 }
 .question-panel .panel, .question-panel .content {
 	padding: 10px;
+}
+.accordion dd > a {
+	background: #BEBEBE; /*#D5D5D5;*/
+}
+.accordion dd > a:hover {
+	background: #D5D5D5;/*#D4E6EC;*/
+}
+.question-panel .content {
+	background: #fff;
 }
 
 .question-panel .button {

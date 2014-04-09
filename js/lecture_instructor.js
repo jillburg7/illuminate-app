@@ -36,9 +36,10 @@ $(document).ready(function() {
 
 	/* toggles displaying the current set of questions */
 	$("#notification-count").click(function () {
-		$("#slider").show();
+		$("#slider").toggle();
 		$("#lecture").toggleClass("small-12 medium-9 large-9 columns");
 		$("#slider").toggleClass("small-12 medium-3 large-3 columns question-panel");
+	
 
 		// $("#msgs > dd:first > div").toggle();
 		// $("#msgs > dd:first > div").toggleClass("active");
