@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Illuminate</title>
+
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/foundation-icons.css" />
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- must have script below to view pdf's -->
+  <script type="text/javascript" src="js/pdf.js"></script>
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+<!-- CONTENT STARTS HERE ! -->
+  <section class="main-section">
+  
+    <div class="row">
+      <div class="large-12 small-centered columns">
+        <h1 class="text-center">Welcome to Illuminate</h1>
+      </div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <div class="panel">
+          <h5>Select a file:</h5>
+          <input type="file" multiple id="myfileinput" onchange="handleFiles(this.files)"/><hr/><br/>
+          <canvas id="the-canvas" style="border:1px solid black;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  
+  <script type="text/javascript">
+    //
+    // See README for overview
+    //
+    'use strict';
+
+    function handleFiles(files) {
+     for (var i = 0; i < files.length; i++) {
+       // alert("Filename " + files[i].name);
+     // }
+      //
+      // Fetch the PDF document from the URL using promises
+      //
+      // PDFJS.getDocument('files/tester.pdf').then(function(pdf) {
+         PDFJS.getDocument(files[i].name).then(function(pdf) {
+          // Using promise to fetch the page
+          pdf.getPage(1).then(function(page) {
+            var scale = 1.0;//1.5;
+            var viewport = page.getViewport(scale);
+
+            //
+            // Prepare canvas using PDF page dimensions
+            //
+            var canvas = document.getElementById('the-canvas');
+            var context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            //
+            // Render PDF page into canvas context
+            //
+            var renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+            page.render(renderContext);
+          });
+        });
+      }
+    }
+  </script>
+</body>
+</html>
