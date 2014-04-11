@@ -15,7 +15,8 @@ $(document).ready(function() {
 		var output = '<ul class="incoming">';
 		var num = 0;
 
-		var searchString = "fly";
+		// var searchString = "fly";
+		var searchString = "weather";
 		var re = new RegExp(searchString);
 
 		$.each(data, function(key, val) {
@@ -37,7 +38,10 @@ $(document).ready(function() {
 	/* toggles displaying the current set of questions */
 	$("#notification-count").click(function () {
 		$("#slider").toggle();
-		$("#lecture").toggleClass("small-12 medium-9 large-9 columns");
+		if($("#lecture").hasClass("medium-12 large-12"))
+			$("#lecture").removeClass("medium-12 large-12").addClass("medium-9 large-9");
+		else
+			$("#lecture").removeClass("medium-9 large-9").addClass("medium-12 large-12");
 		$("#slider").toggleClass("small-12 medium-3 large-3 columns question-panel");
 	
 

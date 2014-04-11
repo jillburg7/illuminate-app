@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="../css/foundation-icons.css" />
 	<link rel="stylesheet" href="../css/style.css"/>
 
+  <!-- must have script below to view pdf's -->
+  <script type="text/javascript" src="../js/pdf.js"></script>
 	<script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -70,115 +72,124 @@
 
 			
 
-				<!-- Modal fly-in/pop-up thingy-->
-				<div id="selectQuizModal" class="reveal-modal medium" data-reveal>
-					<form>
-						<h4>Select from predefined quizzes:</h4>
-						<p><a href="lecture.html">Quiz XXX</a></p>
-						<p><a href="lecture.html">Quiz XXX</a></p>
-						<p><a href="lecture.html">Quiz XXX</a></p>
-					</form>
-					<a class="close-reveal-modal">&#215;</a>
-				</div>
-				<!-- End Modal fly-in/pop-up thingy-->
+			<!-- Modal fly-in/pop-up thingy-->
+			<div id="selectQuizModal" class="reveal-modal medium" data-reveal>
+				<form>
+					<h4>Select from predefined quizzes:</h4>
+					<p><a href="lecture.html">Quiz XXX</a></p>
+					<p><a href="lecture.html">Quiz XXX</a></p>
+					<p><a href="lecture.html">Quiz XXX</a></p>
+				</form>
+				<a class="close-reveal-modal">&#215;</a>
+			</div>
+			<!-- End Modal fly-in/pop-up thingy-->
 
-				<section class="main-section">
-					<div class="row">
-						<div id="lecture"> <!-- class="small-12 medium-12 large-9 columns"> -->
+			<section class="main-section">
+				<div class="row">
+					<div id="lecture" class="small-12 medium-12 large-12 columns">
 
-							<!-- Desktop Slider -->
-							<div class="hide-for-small">
-								<div id="featured">
-									<ul class="example-orbit" data-orbit>
-										<li>
-											<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 1" />
-											<div class="orbit-caption">
-												Caption One.
-											</div>
-										</li>
-										<li>
-											<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 2" />
-											<div class="orbit-caption">
-												Caption Two.
-											</div>
-										</li>
-										<li>
-											<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 3" />
-											<div class="orbit-caption">
-												Caption Three.
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<!-- End Desktop Slider -->
-
-							<!-- Mobile Header -->
-							<div class="row">
-								<div class="small-12 show-for-small"><br>
-									<img src="http://placehold.it/1000x600&text=For Small Screens" />
-								</div>
-							</div>
-							<!-- End Mobile Header -->
-
-							<!-- Notes textfield -->
-							<hr />
-							<form>
-								<div class="row">
-									<div class="small-12 large-12 columns">
-										<label>Notes
-											<textarea placeholder="Enter notes here..."></textarea>
-										</label>
-										<button style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
+						<!-- PDF.js view goes here -->
+						<canvas id="the-canvas" style="border:1px solid black;"/>
+					</div>
+					<!-- end #lecture -->
+					<!-- LARGE VIEW ACCORDION DISPLAY -->
+					<div id="slider" style="display: none;"> <!-- class="show-for-medium-up large-3 columns question-panel"> -->
+						<div class="panel">
+							<h4>Incoming Questions</h4>
+							<dl id="msgs" class="accordion" data-accordion>
+								<dd>
+									<a href="#panel12">Question: ...?</a>
+									<div id="panel12" class="content ">
+										Panel 1. 
 									</div>
-								</div>
-							</form>
+								</dd>
+								<dd style="display: none;">
+									<a href="#panel22">Question: ...?</a>
+									<div id="panel22" class="content">
+										Panel 2.
+									</div>
+								</dd>
+								<dd style="display: none;">
+									<a href="#panel32">Question: ...?</a>
+									<div id="panel32" class="content">
+										Panel 3.
+									</div>
+								</dd>
+							</dl>
 						</div>
+					</div>
+					<!-- end #slider -->
+				</div>
+				<!-- end .row -->
 
-						<!-- LARGE VIEW ACCORDION DISPLAY -->
-						<div id="slider" style="display: none;"> <!-- class="show-for-medium-up large-3 columns question-panel"> -->
-							<div class="panel">
-								<h4>Incoming Questions</h4>
-								<dl id="msgs" class="accordion" data-accordion>
-									<dd>
-										<a href="#panel12">Question: ...?</a>
-										<div id="panel12" class="content ">
-											Panel 1. 
+						<!-- Desktop Slider -->
+<!-- 							<div class="hide-for-small">
+							<div id="featured">
+								<ul class="example-orbit" data-orbit>
+									<li>
+										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 1" />
+										<div class="orbit-caption">
+											Caption One.
 										</div>
-									</dd>
-									<dd style="display: none;">
-										<a href="#panel22">Question: ...?</a>
-										<div id="panel22" class="content">
-											Panel 2.
+									</li>
+									<li>
+										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 2" />
+										<div class="orbit-caption">
+											Caption Two.
 										</div>
-									</dd>
-									<dd style="display: none;">
-										<a href="#panel32">Question: ...?</a>
-										<div id="panel32" class="content">
-											Panel 3.
+									</li>
+									<li>
+										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 3" />
+										<div class="orbit-caption">
+											Caption Three.
 										</div>
-									</dd>
-								</dl>
+									</li>
+								</ul>
+							</div>
+						</div> -->
+						<!-- End Desktop Slider -->
+						
+				<!-- Mobile Header -->
+				<div class="row">
+					<div class="small-12 show-for-small"><br>
+						<img src="http://placehold.it/1000x600&text=For Small Screens" />
+					</div>
+				</div>
+				<!-- End Mobile Header -->
+
+				<div class="row">
+					<div class="small-12 medium-12 large-9 columns">
+						<hr />
+						<!-- Notes textfield -->
+						<form>
+							<div class="row">
+								<div class="small-12 large-12 columns">
+									<label>Notes
+										<textarea placeholder="Enter notes here..."></textarea>
+									</label>
+									<button style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<br/>
+
+				<!-- Footer -->
+				<footer class="row">
+					<div class="large-12 columns">
+						<hr/>
+						<div class="row">
+							<div class="large-6 columns">
+								<p>&copy; 2014 Critical Success Factors</p>
 							</div>
 						</div>
 					</div>
-					<br>
+				</footer>
 
-					<!-- Footer -->
-					<footer class="row">
-						<div class="large-12 columns">
-							<hr>
-							<div class="row">
-								<div class="large-6 columns">
-								<p>&copy; 2014 Critical Success Factors</p>
-								</div>
-							</div>
-						</div>
-					</footer>
-
-				</section>
+			</section>
 			<a class="exit-off-canvas"></a>
-
 		</div>
 	</div>
 
@@ -188,5 +199,39 @@
 		$(document).foundation();
 	</script>
 	<script src="../js/lecture_instructor.js"></script>
+	<script type="text/javascript">
+    		//
+    // See README for overview
+    //
+    'use strict';
+
+      //
+      // Fetch the PDF document from the URL using promises
+      //
+      PDFJS.getDocument('../files/tester.pdf').then(function(pdf) {
+        // Using promise to fetch the page
+        pdf.getPage(1).then(function(page) {
+          var scale = 1.0;//1.5;
+          var viewport = page.getViewport(scale);
+
+          //
+          // Prepare canvas using PDF page dimensions
+          //
+          var canvas = document.getElementById('the-canvas');
+          var context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          //
+          // Render PDF page into canvas context
+          //
+          var renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+        });
+      });
+  </script>
 </body>
 </html>
