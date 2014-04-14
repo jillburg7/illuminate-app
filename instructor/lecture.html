@@ -4,7 +4,6 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- <title>Lecture</title> -->
 	<title>Instructor Lecture</title>
 
 	<link rel="stylesheet" href="../css/foundation.css" />
@@ -12,7 +11,7 @@
 	<link rel="stylesheet" href="../css/style.css"/>
 
   <!-- must have script below to view pdf's -->
-  <script type="text/javascript" src="../js/pdf.js"></script>
+  <script src="../js/pdf.js"></script>
 	<script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -46,7 +45,7 @@
 			</nav>
 
 			<!-- Right Nav Menu -->
-			<aside class="right-off-canvas-menu">
+<!-- 			<aside class="right-off-canvas-menu">
 				<dl class="accordion off-canvas-list" data-accordion>
 					<dd>
 						<a href="#panel1">Question: ...?</a>
@@ -67,7 +66,7 @@
 						</div>
 					</dd>
 				</dl>
-			</aside>
+			</aside> -->
 			<!-- End Right Nav Menu -->
 
 			
@@ -89,7 +88,8 @@
 					<div id="lecture" class="small-12 medium-12 large-12 columns">
 
 						<!-- PDF.js view goes here -->
-						<canvas id="the-canvas" style="border:1px solid black;"/>
+						<!-- <canvas id="the-canvas" style="border:1px solid black;"/> -->
+						<iframe id="viewer" src = "/Viewer.JS/#../files/ln025.pdf" width='1024' height='768' allowfullscreen webkitallowfullscreen></iframe>
 					</div>
 					<!-- end #lecture -->
 					<!-- LARGE VIEW ACCORDION DISPLAY -->
@@ -208,9 +208,10 @@
       //
       // Fetch the PDF document from the URL using promises
       //
-      PDFJS.getDocument('../files/tester.pdf').then(function(pdf) {
+      // PDFJS.getDocument('../files/tester.pdf').then(function(pdf) {
+      PDFJS.getDocument('../files/ln025.pdf').then(function(pdf) {
         // Using promise to fetch the page
-        pdf.getPage(1).then(function(page) {
+        pdf.getPage(2).then(function(page) {
           var scale = 1.0;//1.5;
           var viewport = page.getViewport(scale);
 

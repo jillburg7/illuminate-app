@@ -16,7 +16,7 @@ $(document).ready(function() {
 		var num = 0;
 
 		// var searchString = "fly";
-		var searchString = "weather";
+		var searchString = "fly";
 		var re = new RegExp(searchString);
 
 		$.each(data, function(key, val) {
