@@ -38,11 +38,18 @@ $(document).ready(function() {
 	/* toggles displaying the current set of questions */
 	$("#notification-count").click(function () {
 		$("#slider").toggle();
-		if($("#lecture").hasClass("medium-12 large-12"))
+  	
+		if($("#lecture").hasClass("medium-12 large-12")) {
 			$("#lecture").removeClass("medium-12 large-12").addClass("medium-9 large-9");
-		else
+			// $("#slider").addClass('animated slideInRight');
+		}
+		else{
 			$("#lecture").removeClass("medium-9 large-9").addClass("medium-12 large-12");
+		// $("#slider").addClass('animated slideOutRight');
+		}
 		$("#slider").toggleClass("small-12 medium-3 large-3 columns question-panel");
+		$("#slider").toggleClass('animated slideInRight');
+
 	
 
 		// $("#msgs > dd:first > div").toggle();
