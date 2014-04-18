@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="../css/foundation.css" />
 	<link rel="stylesheet" href="../css/foundation-icons.css" />
 	<link rel="stylesheet" href="../css/style.css"/>
-	<!-- <link rel="stylesheet" href="../css/magic.min.css"/> -->
 	<link rel="stylesheet" href="../css/animate.min.css">
 
   <!-- must have script below to view pdf's -->
@@ -213,10 +212,17 @@
       // PDFJS.getDocument('../files/tester.pdf').then(function(pdf) {
       PDFJS.getDocument('../files/ln025.pdf').then(function(pdf) {
         // Using promise to fetch the page
-        pdf.getPage(2).then(function(page) {
-          var scale = 1.0;//1.5;
-          var viewport = page.getViewport(scale);
+        pdf.getPage(1).then(function(page) {
+          // var scale = 1.0;//1.5;
+          // var viewport = page.getViewport(scale);
+					var desiredWidth = 800;
+					var viewport = page.getViewport(1);
+					var scale = desiredWidth / viewport.width;
+					var scaledViewport = page.getViewport(scale);
+					console.log(scale);
+					console.log(scaledViewport);
 
+					viewport = scaledViewport;
           //
           // Prepare canvas using PDF page dimensions
           //
