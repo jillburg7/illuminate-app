@@ -86,13 +86,16 @@
 
 			<section class="main-section">
 				<div class="row">
-					<div id="lecture" class="small-12 medium-12 large-12 columns">
-
+					<div id="lecture" class="small-12 medium-12 large-12 columns"> <!-- class="small-12 medium-12 large-9 columns"> -->
 						<!-- PDF.js view goes here -->
-						<canvas id="the-canvas" style="border:1px solid black;"/>
-						<!-- <iframe id="viewer" src = "/Viewer.JS/#../files/tester.pdf" width='800' height='600' allowfullscreen webkitallowfullscreen></iframe> -->
+						<canvas id="the-canvas" style="border:1px solid black;"> </canvas>
+						<div id="page-nav" style="margin-top: 5px;">
+							<button style="width: 45%;" type="button" href="" class="nice-button secondary left">Previous Page</button>
+							<button style="width: 45%;" type="button" href="" class="nice-button secondary right">Next Page</button>
+						</div>
 					</div>
 					<!-- end #lecture -->
+					
 					<!-- LARGE VIEW ACCORDION DISPLAY -->
 					<div id="slider" style="display: none;"> <!-- class="show-for-medium-up large-3 columns question-panel"> -->
 						<div class="panel">
@@ -159,7 +162,7 @@
 				<!-- End Mobile Header -->
 
 				<div class="row">
-					<div class="small-12 medium-12 large-9 columns">
+					<div class="small-12 medium-12 large-12 columns">
 						<hr />
 						<!-- Notes textfield -->
 						<form>
@@ -205,24 +208,24 @@
     // See README for overview
     //
     'use strict';
-
       //
       // Fetch the PDF document from the URL using promises
       //
-      // PDFJS.getDocument('../files/tester.pdf').then(function(pdf) {
       PDFJS.getDocument('../files/ln025.pdf').then(function(pdf) {
         // Using promise to fetch the page
         pdf.getPage(1).then(function(page) {
-          // var scale = 1.0;//1.5;
-          // var viewport = page.getViewport(scale);
-					var desiredWidth = 800;
-					var viewport = page.getViewport(1);
-					var scale = desiredWidth / viewport.width;
-					var scaledViewport = page.getViewport(scale);
-					console.log(scale);
-					console.log(scaledViewport);
+          var scale = 1.2;//1.5;
+          var viewport = page.getViewport(scale);
+					console.log(viewport);
 
-					viewport = scaledViewport;
+					// var desiredWidth = 800;
+					// var viewport = page.getViewport(1);
+					// var scale = desiredWidth / viewport.width;
+					// var scaledViewport = page.getViewport(scale);
+					// console.log(scale);
+					// console.log(scaledViewport);
+					// viewport = scaledViewport;
+
           //
           // Prepare canvas using PDF page dimensions
           //
