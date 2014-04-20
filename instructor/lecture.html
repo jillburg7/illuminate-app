@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="../css/style.css"/>
 	<link rel="stylesheet" href="../css/animate.min.css">
 
-  <!-- must have script below to view pdf's -->
-  <script src="../js/pdf.js"></script>
+	<!-- must have script below to view pdf's -->
+	<script src="../js/pdf.js"></script>
 	<script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -89,15 +89,28 @@
 					<div id="lecture" class="small-12 medium-12 large-12 columns"> <!-- class="small-12 medium-12 large-9 columns"> -->
 						<!-- PDF.js view goes here -->
 						<canvas id="the-canvas" style="border:1px solid black;"> </canvas>
+						
 						<div id="page-nav" style="margin-top: 5px;">
 							<button style="width: 45%;" type="button" href="" class="nice-button secondary left">Previous Page</button>
 							<button style="width: 45%;" type="button" href="" class="nice-button secondary right">Next Page</button>
 						</div>
+						<hr />
+						<!-- Notes textfield -->
+						<form>
+							<div class="row">
+								<div class="small-12 large-12 columns">
+									<label>Notes
+										<textarea placeholder="Enter notes here..."></textarea>
+									</label>
+									<button id="save" style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
+								</div>
+							</div>
+						</form>
 					</div>
 					<!-- end #lecture -->
 					
 					<!-- LARGE VIEW ACCORDION DISPLAY -->
-					<div id="slider" style="display: none;"> <!-- class="show-for-medium-up large-3 columns question-panel"> -->
+					<div id="slider"  style="display: none;"> <!-- class="show-for-medium-up large-3 columns question-panel"> -->
 						<div class="panel">
 							<h4>Incoming Questions</h4>
 							<dl id="msgs" class="accordion" data-accordion>
@@ -126,33 +139,6 @@
 				</div>
 				<!-- end .row -->
 
-						<!-- Desktop Slider -->
-<!-- 							<div class="hide-for-small">
-							<div id="featured">
-								<ul class="example-orbit" data-orbit>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 1" />
-										<div class="orbit-caption">
-											Caption One.
-										</div>
-									</li>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 2" />
-										<div class="orbit-caption">
-											Caption Two.
-										</div>
-									</li>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 3" />
-										<div class="orbit-caption">
-											Caption Three.
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div> -->
-						<!-- End Desktop Slider -->
-						
 				<!-- Mobile Header -->
 				<div class="row">
 					<div class="small-12 show-for-small"><br>
@@ -163,18 +149,6 @@
 
 				<div class="row">
 					<div class="small-12 medium-12 large-12 columns">
-						<hr />
-						<!-- Notes textfield -->
-						<form>
-							<div class="row">
-								<div class="small-12 large-12 columns">
-									<label>Notes
-										<textarea placeholder="Enter notes here..."></textarea>
-									</label>
-									<button style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
-								</div>
-							</div>
-						</form>
 					</div>
 				</div>
 
@@ -203,47 +177,5 @@
 		$(document).foundation();
 	</script>
 	<script src="../js/lecture_instructor.js"></script>
-	<script type="text/javascript">
-    		//
-    // See README for overview
-    //
-    'use strict';
-      //
-      // Fetch the PDF document from the URL using promises
-      //
-      PDFJS.getDocument('../files/ln025.pdf').then(function(pdf) {
-        // Using promise to fetch the page
-        pdf.getPage(1).then(function(page) {
-          var scale = 1.2;//1.5;
-          var viewport = page.getViewport(scale);
-					console.log(viewport);
-
-					// var desiredWidth = 800;
-					// var viewport = page.getViewport(1);
-					// var scale = desiredWidth / viewport.width;
-					// var scaledViewport = page.getViewport(scale);
-					// console.log(scale);
-					// console.log(scaledViewport);
-					// viewport = scaledViewport;
-
-          //
-          // Prepare canvas using PDF page dimensions
-          //
-          var canvas = document.getElementById('the-canvas');
-          var context = canvas.getContext('2d');
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          //
-          // Render PDF page into canvas context
-          //
-          var renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
-        });
-      });
-  </script>
 </body>
 </html>
