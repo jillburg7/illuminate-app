@@ -79,14 +79,16 @@ $(document).ready(function() {
 		status();
 	});
 	
-	$("#previous-page").click(function() {
+	// $("#previous-page").click(function() {
+	$(".previous-page").click(function() {
 		if (currentPage > 1) {
 			currentPage = currentPage - 1;
 			prepareDocument(doc, currentPage);
 			pages();
 		}
 	});
-	$("#next-page").click(function() {
+	// $("#next-page").click(function() {
+	$(".next-page").click(function() {
 		if (currentPage < totalPages) {
 			currentPage = currentPage + 1;
 			prepareDocument(doc, currentPage);

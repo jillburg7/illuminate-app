@@ -218,12 +218,14 @@ i {
 	padding-right: 10px;
 	padding-left: 0px;
 	color: #FFF;
+	cursor: pointer;
 }
 
 .fi-arrow-right {
 	padding-right: 0px;
 	padding-left: 10px;
 	color: #FFF;
+	cursor: pointer;
 }
 
 .fi-x .fi-list .fi-alert .fi-info .fi-eye .fi-projection-screen
