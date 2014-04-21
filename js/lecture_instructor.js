@@ -2,7 +2,12 @@
 //Instructor lecture.html stuff below
 //Use data generator to generate student names and questions they ask and then export as 
 //JSON -> which will then be used in the JavaScript regular expression matcher/aggregator
+
+//globals:
 var doc;// = PDFJS.getDocument('../files/ln025.pdf');
+var currentPage; //holds current page number
+var totalPages = -1;
+
 /** 
 * The Idea:
 * -> Query db for all students questions (@ some specified rate...!)
@@ -11,8 +16,10 @@ var doc;// = PDFJS.getDocument('../files/ln025.pdf');
 * -> [Lastly, clicking into view -> modify status options (radios)]
 */
 $(document).ready(function() {
+	//specifiy document to load
 	doc = PDFJS.getDocument('../files/ln025.pdf');
-	prepareDocument(doc);
+	currentPage = 1;
+	prepareDocument(doc, currentPage);
 
 	$.getJSON('../test-data.json', function(data) {
 		var output = '<ul class="incoming">';
@@ -71,8 +78,21 @@ $(document).ready(function() {
 		$(".incoming > li").children(".statuschanger").removeClass("active");
 		status();
 	});
-
-	$("#save").click(function() { pages(); });
+	
+	$("#previous-page").click(function() {
+		if (currentPage > 1) {
+			currentPage = currentPage - 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+	$("#next-page").click(function() {
+		if (currentPage < totalPages) {
+			currentPage = currentPage + 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
 });
 
 
@@ -99,7 +119,7 @@ function status() {
 	});
 }
 
-function prepareDocument(doc) {
+function prepareDocument(doc, num) {
 	//
 	// See README for overview
 	//
@@ -109,17 +129,17 @@ function prepareDocument(doc) {
 	//
 	doc.then(function(pdf) {
 		// Using promise to fetch the page
-		pdf.getPage(1).then(function(page) {
-			// var scale = 1.2;//1.5;
-			// var viewport = page.getViewport(scale);
-			// console.log(viewport);
+		
+		pdf.getPage(num).then(function(page) {
+			if (totalPages === -1){
+				totalPages = pdf.numPages;
+				pages();
+			}
 
 			var desiredWidth = $("#lecture").width();
 			var viewport = page.getViewport(1);
 			var scale = desiredWidth / viewport.width;
 			var scaledViewport = page.getViewport(scale);
-			console.log(scale);
-			// console.log(scaledViewport);
 			viewport = scaledViewport;
 
 			//
@@ -145,14 +165,14 @@ function prepareDocument(doc) {
 function calculateScale() {
 	doc.then(function(pdf) {
 		// Using promise to fetch the page
-		pdf.getPage(1).then(function(page) {
+		pdf.getPage(currentPage).then(function(page) {
 
 			var desiredWidth = $("#lecture").width();
 			var viewport = page.getViewport(1);
 			var scale = desiredWidth / viewport.width;
 			var scaledViewport = page.getViewport(scale);
-			console.log(scale);
-			console.log(scaledViewport);
+			// console.log(scale);
+			// console.log(scaledViewport);
 			viewport = scaledViewport;
 
 			//
@@ -175,9 +195,18 @@ function calculateScale() {
 	});
 }
 
-
 function pages() {
 	doc.then(function(pdf) {
-		console.log(pdf.numPages);
+		var pageCount = $("#page-index");
+		$(pageCount).html("Page " + currentPage + " of " + totalPages);
+		// $(pageCount).children().first().after("<h5>Page " + currentPage + " of " + totalPages + "</h5>");
+	});
+}
+
+function changePage(num) {
+	doc.then(function(pdf) {
+		pdf.getPage(num).then(function(page) {
+
+		});
 	});
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+	
 	<title>Instructor Lecture</title>
 
 	<link rel="stylesheet" href="../css/foundation.css" />
@@ -73,9 +73,9 @@
 			
 
 			<!-- Modal fly-in/pop-up thingy-->
-			<div id="selectQuizModal" class="reveal-modal medium" data-reveal>
+			<div id="selectQuizModal" class="reveal-modal small" data-reveal>
 				<form>
-					<h4>Select from predefined quizzes:</h4>
+					<h4>Select from predefined quizzes:</h4><hr/>
 					<p><a href="lecture.html">Quiz XXX</a></p>
 					<p><a href="lecture.html">Quiz XXX</a></p>
 					<p><a href="lecture.html">Quiz XXX</a></p>
@@ -86,13 +86,32 @@
 
 			<section class="main-section">
 				<div class="row">
-					<div id="lecture" class="small-12 medium-12 large-12 columns"> <!-- class="small-12 medium-12 large-9 columns"> -->
+					<div id="lecture" class="small-12 medium-12 large-12 columns">
+					
+						<!-- pdf controls -->
+						<div class="row">
+							<div class="large-4 columns">
+								<a href="">
+									<i style="padding-right: 10px; padding-left: 0px;" class="fi-arrow-left"></i>
+								</a>
+							</div>
+							<div class="large-4 small-centered columns">
+								<a href="">
+									<i style="padding-right: 10px; padding-left: 0px;" class="fi-arrow-left"></i>
+								</a>
+								<h5 id="page-index" style="text-align: center;"></h5>
+								<a href=""><i class="fi-arrow-right"></i></a>
+							</div>
+							<div class="large-4 columns">...</div>
+						</div>
+
 						<!-- PDF.js view goes here -->
 						<canvas id="the-canvas" style="border:1px solid black;"> </canvas>
-						
-						<div id="page-nav" style="margin-top: 5px;">
-							<button style="width: 45%;" type="button" href="" class="nice-button secondary left">Previous Page</button>
-							<button style="width: 45%;" type="button" href="" class="nice-button secondary right">Next Page</button>
+						<div class="row">
+							<div id="page-nav" style="margin-top: 6px;" class="small-12 large-12 columns">
+								<button id="previous-page" style="width: 45%; margin-bottom: 0px;" type="button" href="" class="nice-button secondary left">Previous Page</button>
+								<button id="next-page" style="width: 45%; margin-bottom: 0px;" type="button" href="" class="nice-button secondary right">Next Page</button>
+							</div>
 						</div>
 						<hr />
 						<!-- Notes textfield -->
@@ -102,6 +121,10 @@
 									<label>Notes
 										<textarea placeholder="Enter notes here..."></textarea>
 									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-12 large-12 columns">
 									<button id="save" style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
 								</div>
 							</div>
@@ -138,21 +161,6 @@
 					<!-- end #slider -->
 				</div>
 				<!-- end .row -->
-
-				<!-- Mobile Header -->
-				<div class="row">
-					<div class="small-12 show-for-small"><br>
-						<img src="http://placehold.it/1000x600&text=For Small Screens" />
-					</div>
-				</div>
-				<!-- End Mobile Header -->
-
-				<div class="row">
-					<div class="small-12 medium-12 large-12 columns">
-					</div>
-				</div>
-
-				<br/>
 
 				<!-- Footer -->
 				<footer class="row">
