@@ -10,7 +10,10 @@
 	<link rel="stylesheet" href="../css/foundation.css" />
 	<link rel="stylesheet" href="../css/foundation-icons.css" />
 	<link rel="stylesheet" href="../css/style.css"/>
+	<link rel="stylesheet" href="../css/animate.min.css">
 
+	<!-- must have script below to view pdf's -->
+	<script src="../js/pdf.js"></script>
 	<script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -37,7 +40,7 @@
 						<li>
 							<a href="dashboard.html">Dashboard</a>
 						</li>
-						<li class="show-for-medium-down">
+						<li>  <!-- class="show-for-medium-down" -->
 							<a href="#" data-reveal-id="askQuestionModal" data-reveal>Ask a Question</a>
 						</li>
 						<li></li>
@@ -57,14 +60,69 @@
 			<section class="main-section">
 				<div class="row">
 
+					<!-- begin #lecture content -->
+					<div id="lecture" class="small-12 medium-12 large-12 columns">
+
+						<!-- pdf controls -->
+						<div class="row show-for-medium-up">
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+								<i style="" class="fi-arrow-left right previous-page"></i>
+								<i style="" class="fi-previous right"></i>
+							</div>
+							<div class="small-4 medium-2 large-2 columns" style="padding: 0px;">
+								<h5 class="page-index"></h5>
+							</div>
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+								<i class="fi-arrow-right left next-page"></i>
+								<i style="" class="fi-next left"></i>
+							</div>
+						</div>
+
+						<!-- PDF.js view goes here -->
+						<canvas id="the-canvas" style="border:1px solid black;"> </canvas>
+
+						<!-- pdf controls -->
+						<div class="row">
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+								<i style="" class="fi-arrow-left right previous-page"></i>
+								<i style="" class="fi-previous right"></i>
+							</div>
+							<div class="small-4 medium-2 large-2 columns" style="padding: 0px;">
+								<h5 class="page-index"></h5>
+							</div>
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+								<i class="fi-arrow-right left next-page"></i>
+								<i style="" class="fi-next left"></i>
+							</div>
+						</div>
+
+						<hr />
+						<!-- Notes textfield -->
+						<form>
+							<div class="row">
+								<div class="small-12 large-12 columns">
+									<label>Notes
+										<textarea placeholder="Enter notes here..."></textarea>
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-12 large-12 columns">
+									<button id="save" style="width: 25%;" type="button" class="nice-button right">Save</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- end #lecture content -->
+
 					<!-- Modal fly-in/pop-up thingy-->
-					<div id="askQuestionModal" class="medium reveal-modal" data-reveal>
+					<div id="askQuestionModal" class="small reveal-modal" data-reveal>
 						<form action="#" method="POST">
 							<h4>Ask a Question?</h4>
 							<textarea id="question-m" placeholder="Enter question here..."></textarea>
 							<div id="char-counter-m" class="right">255 characters left</div>
-							<button type="button" href="lecture.html" class="small button">Clear</button>
-							<button type="button" href="lecture.html" class="small button">Submit</button>
+							<button type="button" class="small button">Clear</button>
+							<button type="button" class="small button">Submit</button>
 						</form>
 						<a class="close-reveal-modal">&#215;</a>
 					</div>
@@ -72,173 +130,91 @@
 
 
 					<!-- Modal fly-in/pop-up thingy-->
-					<div id="answerQuizModal" class="reveal-modal " data-reveal>
+					<div id="answerQuizModal" class="reveal-modal small" data-reveal>
 						<form id="quiz" action="" method="POST">
+							<!-- <br/> -->
 							<h4>Question:</h4>
-							<h5>question_area</h5>
+							<h6>question text here</h6>
+							<hr />
+							<h4>Choose an answer:</h4>
 
 							<!-- multiple-choice: answer A -->
 							<div class="row">
-								<div class="small-2 medium-1 large-1 columns quiz">
+								<div class="small-12 medium-12 large-12 columns quiz">
 									<input type="radio" name="quiz" value="A" id="answerA" checked/>
-									<label for="answerA" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A.</label>
-								</div>
-								<div class="small-10 medium-11 large-11 columns end quiz-answer">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									<label for="answerA" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
+										<p><span>A.</span> answer text here</p>
+									</label>
 								</div>
 							</div>
 
 							<!-- multiple-choice: answer B -->
 							<div class="row">
-								<div class="small-2 medium-1 large-1 columns quiz">
+								<div class="small-12 medium-12 large-12 columns quiz">
 									<input type="radio" name="quiz" value="B" id="answerB" />
-									<label for="answerB" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B.</label>
-								</div>
-								<div class="small-10 medium-11 large-11 columns end quiz-answer">
-									<p>answer2</p>
+									<label for="answerB" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
+										<p><span>B.</span> answer text here</p>
+									</label>
 								</div>
 							</div>
 
 							<!-- multiple-choice: answer C -->
 							<div class="row">
-								<div class="small-2 medium-1 large-1 columns quiz">
+								<div class="small-12 medium-12 large-12 columns quiz">
 									<input type="radio" name="quiz" value="C" id="answerC" />
-									<label for="answerC" style="margin-right: 0px; margin-left: 2px; padding: 0px;" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C.</label>
-								</div>
-								<div class="small-10 medium-11 large-11 columns end quiz-answer">
-									<p>answer3</p>
+									<label for="answerC" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
+										<p><span>C.</span> answer text here</p>
+									</label>
 								</div>
 							</div>
 
 							<!-- multiple-choice: answer D -->
 							<div class="row">
-								<div class="small-2 medium-1 large-1 columns quiz">
+								<div class="small-12 medium-12 large-12 columns quiz">
 									<input type="radio" name="quiz" value="D" id="answerD" />
-									<label for="answerD" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D.</label>
-								</div>
-								<div class="small-10 medium-11 large-11 columns end quiz-answer">
-									<p>answer4</p>
+									<label for="answerD" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
+										<p><span>D.</span> answer text here</p>
+									</label>
 								</div>
 							</div>
 
 							<br>
-							<button href="lecture.html" class="nice-button left">Clear</button>
-							<button type="submit" href="lecture.html" class="nice-button right">Submit</button>
+							<button class="nice-button left">Clear</button>
+							<button type="submit" class="nice-button right">Submit</button>
 
 						</form>
 						<a class="close-reveal-modal">&#215;</a>
 					</div>
 					<!-- End Modal fly-in/pop-up thingy-->
+				</div>
+				<!-- end .row -->
 
-					<!-- Content subgroups -->
-					<div class="small-12 large-9 columns">       
-						<!-- Desktop Slider -->
-						<div class="hide-for-small">
-							<div id="featured">
-								<!-- <img src="http://placehold.it/1024x768&text=Slide Image" alt="slide image">-->
-								<ul class="example-orbit" data-orbit>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 1" />
-										<div class="orbit-caption">
-											Caption One.
-										</div>
-									</li>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 2" />
-										<div class="orbit-caption">
-											Caption Two.
-										</div>
-									</li>
-									<li>
-										<img src="http://placehold.it/1024x768&text=Slide Image" alt="slide 3" />
-										<div class="orbit-caption">
-											Caption Three.
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<!-- End Desktop Slider -->
+					<!-- Footer -->
 
-						<!-- Mobile Header -->
-						<div class="row">
-							<div class="small-12 show-for-small"><br>
-								<img src="http://placehold.it/1000x600&text=For Small Screens" />
-							</div>
-						</div>
-						<!-- End Mobile Header -->
-
-						<hr />
-
-						<form action="#" method="POST">
+					<footer class="row">
+						<div class="large-12 columns">
+							<hr>
 							<div class="row">
-								<div class="small-12 large-12 columns">
-									<label>Notes</label>
-									<textarea placeholder="Enter notes here..."></textarea>
-									<button style="width: 25%;" href="lecture.html" class="nice-button right">Save</button>
+								<div class="large-6 columns">
+									<p>&copy; 2014 Critical Success Factors</p>
+								</div>
+								<div class="large-6 columns">
 								</div>
 							</div>
-						</form>
-					</div>
-
-					<div class="hide-for-medium-down large-3 columns ">
-						<div class="panel">
-							<form action="#" method="POST">
-								<div class="row">
-									<div id="ask-question" class="large-12 columns clearfix">
-										<h4>Ask a Question?</h4>
-										<textarea id="question" placeholder="Enter question here..."></textarea>
-										<div id="char-counter" class="right">255 characters left</div>
-										<button href="lecture.html" class="nice-button left">Clear</button>
-										<button href="lecture.html" class="nice-button right">Submit</button>
-									</div>
-								</div>
-							</form>
 						</div>
-						<hr/>
+					</footer>
 
-						<div class="panel">
-							<form action="#" method="POST">
-								<div class="row">
-									<div class="large-12 columns">
-										<h4>Status Updates</h4>
-										<div id="notifications">
-											<a href="#" data-reveal-id="answerQuizModal" data-reveal class="small secondary button">You have a quiz waiting.</a>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
+				</section>
+				<a class="exit-off-canvas"></a>
 
-					</div>
-				</div><br>
-
-				<!-- Footer -->
-
-				<footer class="row">
-					<div class="large-12 columns">
-						<hr>
-						<div class="row">
-							<div class="large-6 columns">
-								<p>&copy; 2014 Critical Success Factors</p>
-							</div>
-							<div class="large-6 columns">
-							</div>
-						</div>
-					</div>
-				</footer>
-
-			</section>
-			<a class="exit-off-canvas"></a>
-
+			</div>
 		</div>
-	</div>
 
-	<script src="../js/vendor/jquery.js"></script>
-	<script src="../js/foundation.min.js"></script>
-	<script>
-		$(document).foundation();
-	</script>
-	<script src="../js/lecture_student.js"></script>
-</body>
-</html>
+		<script src="../js/vendor/jquery.js"></script>
+		<script src="../js/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
+		<script src="../js/lecture_student.js"></script>
+	</body>
+	</html>

@@ -1,41 +1,56 @@
-
 // STUDENT lecture.html stuff below
-//Use data generator to generate student names and questions they ask and then export as 
-//JSON -> which will then be used in the JavaScript regular expression matcher/aggregator
 
+//globals:
+var doc;
+var currentPage; //holds current page number
+var totalPages = -1;
 
 /** 
-* The Idea:
-* -> Query db for all students questions (@ some specified rate...!)
-* -> Find common words.. [eg. would need to track words that occur twice or more]
-* -> Questions that contain the word(s) with the highest occurance are group together
-* -> [Lastly, clicking into view -> modify status options (radios)]
+* 
 */
 $(document).ready(function() {
-	// $.getJSON('../test-data.json', function(data) {
-	//   var output = '<ul class="incoming">';
-	  var num = 1;
-	//   $.each(data, function(key, val) {
-	//     // if ((val.name.search(myExp) != -1) || (val.bio.search(myExp) != -1)) {
-	//       output += '<li id="q'+ num +'">';
-	//       output += '<h6>'+ val.name +'</h6>';
-	//       output += '<h4><small>'+ val.question +'</small></h4>';
-	//       output += '</li>';
-	//       num++;
-	//     // }
-	//   });
-	//   output += '</ul>';
-	//   $('#panel12').html(output);
-	notificationBadge(num);
-	// }); //getJSON
-	// /* toggles displaying the current set of questions */
-	// $("#notification-count").click(function () {
-	//   $("#msgs > dd:first > div").toggle();
-	//   $("#msgs > dd:first > div").toggleClass("active");
-	//   $("#msgs > dd:first").toggleClass("active");
-	// }); 
-	
+	//specifiy document to load
+	doc = PDFJS.getDocument('../files/Marketing_Slideshow.pdf');
+	currentPage = 1;
+	prepareDocument(doc, currentPage);
+
+	//var num = 1;
+	notificationBadge(1);
 	charCounter();
+	
+	$(".previous-page").click(function() {
+		if (currentPage > 1) {
+			currentPage = currentPage - 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+
+	$(".next-page").click(function() {
+		if (currentPage < totalPages) {
+			currentPage = currentPage + 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+
+	//go to beginning of doc
+	$(".fi-previous").click(function() {
+		if (currentPage !== 1) {
+			currentPage = 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+
+	//go to beginning of doc
+	$(".fi-next").click(function() {
+		if (totalPages !== -1 && currentPage !== totalPages) {
+			currentPage = totalPages;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
 });
 
 /*
@@ -45,7 +60,7 @@ $(document).ready(function() {
 */
 function notificationBadge(num) {
 	$("#notification-count").append('   <span class="label round">' + num + '</span>');
-} //notificationBadge
+}
 
 function charCounter() {
 	$("#question").keyup(function() {
@@ -65,5 +80,88 @@ function charCounter() {
 		} else {
 			$("#char-counter-m").html('' + count + " characters left");
 		}
+	});
+}
+
+function prepareDocument(doc, num) {
+	//
+	// See README for overview
+	//
+	'use strict';
+	//
+	// Fetch the PDF document from the URL using promises
+	//
+	doc.then(function(pdf) {
+		// Using promise to fetch the page
+		
+		pdf.getPage(num).then(function(page) {
+			if (totalPages === -1){
+				totalPages = pdf.numPages;
+				pages();
+			}
+
+			var desiredWidth = $("#lecture").width();
+			var viewport = page.getViewport(1);
+			var scale = desiredWidth / viewport.width;
+			var scaledViewport = page.getViewport(scale);
+			viewport = scaledViewport;
+
+			//
+			// Prepare canvas using PDF page dimensions
+			//
+			var canvas = document.getElementById('the-canvas');
+			var context = canvas.getContext('2d');
+			canvas.height = viewport.height;
+			canvas.width = viewport.width;
+
+			//
+			// Render PDF page into canvas context
+			//
+			var renderContext = {
+				canvasContext: context,
+				viewport: viewport
+			};
+			page.render(renderContext);
+		});
+	});
+}
+
+function calculateScale() {
+	doc.then(function(pdf) {
+		// Using promise to fetch the page
+		pdf.getPage(currentPage).then(function(page) {
+
+			var desiredWidth = $("#lecture").width();
+			var viewport = page.getViewport(1);
+			var scale = desiredWidth / viewport.width;
+			var scaledViewport = page.getViewport(scale);
+			// console.log(scale);
+			// console.log(scaledViewport);
+			viewport = scaledViewport;
+
+			//
+			// Prepare canvas using PDF page dimensions
+			//
+			var canvas = document.getElementById('the-canvas');
+			var context = canvas.getContext('2d');
+			canvas.height = viewport.height;
+			canvas.width = viewport.width;
+
+			//
+			// Render PDF page into canvas context
+			//
+			var renderContext = {
+				canvasContext: context,
+				viewport: viewport
+			};
+			page.render(renderContext);
+		});
+	});
+}
+
+function pages() {
+	doc.then(function(pdf) {
+		var pageCount = $(".page-index");
+		$(pageCount).html("Page " + currentPage + " of " + totalPages);
 	});
 }

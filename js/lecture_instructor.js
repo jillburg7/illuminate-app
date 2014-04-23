@@ -4,7 +4,7 @@
 //JSON -> which will then be used in the JavaScript regular expression matcher/aggregator
 
 //globals:
-var doc;// = PDFJS.getDocument('../files/ln025.pdf');
+var doc;
 var currentPage; //holds current page number
 var totalPages = -1;
 
