@@ -14,9 +14,9 @@
 </head>
 <body>
 
-<!-- CONTENT STARTS HERE ! -->
+	<!-- CONTENT STARTS HERE ! -->
 	<section class="main-section">
-	
+
 		<div class="row">
 			<div class="large-12 small-centered columns">
 				<h1 class="text-center">Welcome to Illuminate</h1>
@@ -24,35 +24,27 @@
 		</div>
 
 		<div class="row">
-			<div class="small-11 small-centered columns">
+			<div class="small-12 medium-5 large-5 small-centered columns">
 
-				<!-- form content -->
+				<!-- user credentials grouping -->
 				<form id="login" action="login.php" method="POST" autocomplete="on">
-					<!-- user credentials grouping -->
-					<div class="row">
-						<div class="small-12 medium-6 large-6 small-centered columns">
-							<fieldset>
+					<fieldset>
+						<label>Email Address
+							<input type="email" name="email" placeholder="user@email.com" required>
+						</label>
 
-								<!-- <legend>Log In to Illuminate</legend> -->
-								<label>Email Address
-									<input type="email" name="email" placeholder="user@email.com" required>
-								</label>
-
-								<label>Password
-									<input type="password" name="password" placeholder="password" required>
-								</label>
-								<div class="row">
-									<div class="small-12 medium-6 large-6 small-centered columns">
-										<button type="submit" class="big-button">Log In</button>
-									</div>
-								</div>
-							</fieldset>
-								<div class="small-12 medium-6 large-6 small-centered columns">
-									<p class="signup-link">Not a user? <a href="signup.html">Sign up!</a></p>
-								</div>
-						</div>
-					</div>
+						<label>Password
+							<input type="password" name="password" placeholder="password" required>
+						</label>
+						<button type="submit" class="big-button">Log In</button>
+					</fieldset>
 				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 medium-6 large-6 small-centered columns">
+				<p style="text-align: center;" class="signup-link">Not a user? <a href="signup.html">Sign up!</a></p>
 			</div>
 		</div>
 
@@ -60,13 +52,11 @@
 
 		<div class="row">
 			<div class="small-12 medium-5 large-4 small-centered columns">
-				<div class="panel">
+				<div style="text-align: center;" class="panel">
 					<h5>Select a user:</h5>
-					<p>
 						<a href="student/dashboard.html" class="small secondary button signup-link">Student</a>
 						<a href="instructor/dashboard.html" class="small secondary button signup-link">Instructor</a>
-					</p>
-					<h6>[For testing purposes]</h6>
+					<h6><small>[For testing purposes]</small></h6>
 				</div>
 			</div>
 		</div>
