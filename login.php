@@ -4,7 +4,7 @@
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-$type = '';
+$type = -1;
 
 
 	// if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,8 +39,12 @@ $type = '';
 			echo header('Location: /student/dashboard.html');
 			// mysqli_close($con);
 		}
-		if ($type == 1) {
+		else if ($type == 1) {
 			echo header('Location: /instructor/dashboard.html');
 			// mysqli_close($con);
+		}
+		else {
+			echo header('Location: /index.html');
+			//display error on page!
 		}
 ?>
