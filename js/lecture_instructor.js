@@ -17,7 +17,7 @@ var totalPages = -1;
 */
 $(document).ready(function() {
 	//specifiy document to load
-	doc = PDFJS.getDocument('../files/ln025.pdf');
+	doc = PDFJS.getDocument('../files/Marketing_Slideshow.pdf');
 	currentPage = 1;
 	prepareDocument(doc, currentPage);
 
@@ -71,6 +71,7 @@ $(document).ready(function() {
 		$(".incoming > li").children(".statuschanger").removeClass("active");
 		status();
 	});
+
 	$("#msgs > dd:first > a").click(function () {
 		$("#msgs > dd:first > div").toggle();
 		$("#msgs > dd:first > div").toggleClass("active");
@@ -79,7 +80,6 @@ $(document).ready(function() {
 		status();
 	});
 	
-	// $("#previous-page").click(function() {
 	$(".previous-page").click(function() {
 		if (currentPage > 1) {
 			currentPage = currentPage - 1;
@@ -87,7 +87,7 @@ $(document).ready(function() {
 			pages();
 		}
 	});
-	// $("#next-page").click(function() {
+
 	$(".next-page").click(function() {
 		if (currentPage < totalPages) {
 			currentPage = currentPage + 1;
@@ -95,8 +95,25 @@ $(document).ready(function() {
 			pages();
 		}
 	});
-});
 
+	//go to beginning of doc
+	$(".fi-previous").click(function() {
+		if (currentPage !== 1) {
+			currentPage = 1;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+
+	//go to beginning of doc
+	$(".fi-next").click(function() {
+		if (totalPages !== -1 && currentPage !== totalPages) {
+			currentPage = totalPages;
+			prepareDocument(doc, currentPage);
+			pages();
+		}
+	});
+});
 
 /*
 	* Applies a number count & notification badge to display the current number
@@ -199,16 +216,7 @@ function calculateScale() {
 
 function pages() {
 	doc.then(function(pdf) {
-		var pageCount = $("#page-index");
+		var pageCount = $(".page-index");
 		$(pageCount).html("Page " + currentPage + " of " + totalPages);
-		// $(pageCount).children().first().after("<h5>Page " + currentPage + " of " + totalPages + "</h5>");
-	});
-}
-
-function changePage(num) {
-	doc.then(function(pdf) {
-		pdf.getPage(num).then(function(page) {
-
-		});
 	});
 }

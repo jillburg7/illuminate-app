@@ -202,7 +202,7 @@ fieldset {
 i {
 	/*line-height: 2.0625rem;*/
 	/*padding: 0px 0px 0px 10px;*/
-	padding-left: 10px;
+	padding-left: 0px;
 	color: #FFF;
 	position: relative;
 	font-size: 36px;
@@ -214,18 +214,33 @@ i {
 	padding-left: 7px;
 }
 
-.fi-arrow-left {
-	padding-right: 10px;
+.fi-arrow-left, .fi-previous {
+	padding-right: 22px;
 	padding-left: 0px;
 	color: #FFF;
 	cursor: pointer;
+	font-size: 40px;
 }
 
-.fi-arrow-right {
+.fi-arrow-right, .fi-next {
 	padding-right: 0px;
-	padding-left: 10px;
+	padding-left: 22px;
 	color: #FFF;
 	cursor: pointer;
+	font-size: 40px;
+}
+
+.fi-arrow-left {
+	padding-right: 10px;
+}
+.fi-arrow-right {
+	padding-left: 10px;
+}
+
+.page-index {
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom: 5px;
 }
 
 .fi-x .fi-list .fi-alert .fi-info .fi-eye .fi-projection-screen

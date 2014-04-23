@@ -89,30 +89,38 @@
 					<div id="lecture" class="small-12 medium-12 large-12 columns">
 					
 						<!-- pdf controls -->
-						<div class="row">
-							<div class="small-3 medium-5 large-5 columns" style="padding: 0px;">
-								<!-- <a href=""> -->
+						<div class="row show-for-medium-up">
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
 									<i style="" class="fi-arrow-left right previous-page"></i>
-								<!-- </a> -->
+									<i style="" class="fi-previous right"></i>
 							</div>
-							<div class="small-6 medium-2 large-2 columns" style="padding: 0px;">
-								<h5 id="page-index" style="text-align: center;"></h5>
+							<div class="small-4 medium-2 large-2 columns" style="padding: 0px;">
+								<h5 class="page-index"></h5>
 							</div>
-							<div class="small-3 medium-5 large-5 columns" style="padding: 0px;">
-								<!-- <a href=""> -->
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
 									<i class="fi-arrow-right left next-page"></i>
-								<!-- </a> -->
+									<i style="" class="fi-next left"></i>
 							</div>
 						</div>
 
 						<!-- PDF.js view goes here -->
 						<canvas id="the-canvas" style="border:1px solid black;"> </canvas>
+					
+						<!-- pdf controls -->
 						<div class="row">
-							<div id="page-nav" style="margin-top: 6px;" class="small-12 large-12 columns">
-								<button id="previous-page" style="width: 45%; margin-bottom: 0px;" type="button" href="" class="previous-page nice-button secondary left">Previous Page</button>
-								<button id="next-page" style="width: 45%; margin-bottom: 0px;" type="button" href="" class="next-page nice-button secondary right">Next Page</button>
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+									<i style="" class="fi-arrow-left right previous-page"></i>
+									<i style="" class="fi-previous right"></i>
+							</div>
+							<div class="small-4 medium-2 large-2 columns" style="padding: 0px;">
+								<h5 class="page-index"></h5>
+							</div>
+							<div class="small-4 medium-5 large-5 columns" style="padding: 0px;">
+									<i class="fi-arrow-right left next-page"></i>
+									<i style="" class="fi-next left"></i>
 							</div>
 						</div>
+
 						<hr />
 						<!-- Notes textfield -->
 						<form>
@@ -125,7 +133,7 @@
 							</div>
 							<div class="row">
 								<div class="small-12 large-12 columns">
-									<button id="save" style="width: 25%;" type="button" href="" class="nice-button right">Save</button>
+									<button id="save" style="width: 25%;" type="button" class="nice-button right">Save</button>
 								</div>
 							</div>
 						</form>
