@@ -90,6 +90,10 @@ function randomString() {
 	return randomstring;
 }
 
+/**
+* Code Credit for file uploader: jQuery File Uploader
+* https://github.com/blueimp/jQuery-File-Upload
+*/
 function fileChooser() {
 /*jslint unparam: true, regexp: true */
 /*global window, $ */
@@ -105,7 +109,6 @@ $(function () {
 				data = $this.data();
 			$this
 				.off('click')
-				//.text('Abort')
 				.on('click', function () {
 					$this.remove();
 					data.abort();

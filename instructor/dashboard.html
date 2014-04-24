@@ -80,71 +80,73 @@
 							<!-- start second panel -->
 							<div class="content" id="panel2-2">
 								<!-- form content -->
-								<form action="#" method="POST">
-									<!-- user credentials grouping -->
+								<form action="quiz_creation.php" method="POST">
 									<div class="row">
-										<div class="small-12 medium-12 large-10 small-centered columns">
-											<label>Quiz Identifier
-												<input type="text" placeholder="Favorite Color" />
-											</label>
+										<div class="small-12 medium-12 large-12 small-centered columns">
+											<div class="row">
+												<div class="small-12 medium-10 large-10 small-centered columns">
+													<h4>Create a New Quiz</h4>
+													<label>Quiz Name
+														<input type="text" name="quiz_id" placeholder="Favorite Color" />
+													</label>
+													<label>Question
+														<input type="text" name="question" placeholder="Of the colors below, what is your favorite color?" />
+													</label>
+													<p>Fill in possible answers below. Select the radiobutton next to the correct answer.</p>
+												</div>
+											</div>
 
-											<label>Question
-												<input type="text" placeholder="Of the colors below, what is your favorite color?" />
-											</label>
-
-											<label>Fill in possible answers below. Enable the selector next to the correct answer.
-												<br/>Leave answer fields blank if you do not want to have all four possible choices.
-											</label>
 											<!-- multiple-choice: answer A -->
 											<div class="row">
-												<div class="small-2 medium-2 large-2 columns quiz-creation">
-													<input type="radio" name="multipleChoice" value="A" id="A" checked />
-													<label for="A" style="margin-right: 0px; margin-left: 2px; padding: 0px;">A</label>
-												</div>
-												<div class="small-10 medium-10 large-10 columns end ">
-													<input type="text" placeholder="Blue" />
+												<div class="small-12 medium-10 large-10 small-centered columns">
+													<input type="radio" name="multipleChoice" value="A" id="answerA" />
+													<label for="answerA" style="margin: 0px 4px; padding: 0px;">
+														<span>A.</span>
+													</label>
+													<input type="text" name="answerA" placeholder="Blue" style="width: 88%; display: inline;"/>
 												</div>
 											</div>
 
 											<!-- multiple-choice: answer B -->
 											<div class="row">
-												<div class="small-2 medium-2 large-2 columns quiz-creation">
-													<input type="radio" name="multipleChoice" value="B" id="B" />
-													<label for="B" style="margin-right: 0px; margin-left: 2px; padding: 0px;">B</label>
-												</div>
-												<div class="small-10 medium-10 large-10 columns end ">
-													<input type="text" placeholder="Yellow" />
+												<div class="small-12 medium-10 large-10 small-centered columns">
+													<input type="radio" name="multipleChoice" value="B" id="answerB" />
+													<label for="answerB" style="margin: 0px 4px; padding: 0px;">
+														<span>B.</span>
+													</label>
+													<input type="text" name="answerB" placeholder="Yellow" style="width: 88%; display: inline;"/>
 												</div>
 											</div>
 
 											<!-- multiple-choice: answer C -->
 											<div class="row">
-												<div class="small-2 medium-2 large-2 columns quiz-creation">
-													<input type="radio" name="multipleChoice" value="C" id="C" />
-													<label for="C" style="margin-right: 0px; margin-left: 2px; padding: 0px;">C</label>
-												</div>
-												<div class="small-10 medium-10 large-10 columns end ">
-													<input type="text" placeholder="Green" />
+												<div class="small-12 medium-10 large-10 small-centered columns">
+													<input type="radio" name="multipleChoice" value="C" id="answerC" />
+													<label for="answerC" style="margin: 0px 4px; padding: 0px;">
+														<span>C.</span>
+													</label>
+													<input type="text" name="answerC" placeholder="Green" style="width: 88%; display: inline;"/>
 												</div>
 											</div>
 
 											<!-- multiple-choice: answer D -->
 											<div class="row">
-												<div class="small-2 medium-2 large-2 columns quiz-creation">
-													<input type="radio" name="multipleChoice" value="D" id="D" />
-													<label for="D" style="margin-right: 0px; margin-left: 2px; padding: 0px;">D</label>
-												</div>
-												<div class="small-10 medium-10 large-10 columns end ">
-													<input type="text" placeholder="Red" />
+												<div class="small-12 medium-10 large-10 small-centered columns">
+													<input type="radio" name="multipleChoice" value="D" id="answerD" />
+													<label for="answerD" style="margin: 0px 4px; padding: 0px;">
+														<span>D.</span>
+													</label>
+													<input type="text" name="answerD" placeholder="Red" style="width: 88%; display: inline;"/>
 												</div>
 											</div>
-										</div>
-									</div>
 
-									<div class="row clearfix">
-										<div class="small-12  medium-12 large-10  small-centered columns">
-											<!-- <button href="#" class="nice-button left" style="width: 25%;">Cancel</button> -->
-											<button type="button" class="nice-button right" style="width: 25%;">Save</button>
+											<div class="row">
+												<div class="small-12 medium-6 large-6 small-centered columns">
+													<button class="nice-button left">Cancel</button>
+													<button type="submit" class="nice-button right">Submit</button>
+												</div>
+											</div>
+
 										</div>
 									</div>
 								</form>
@@ -179,9 +181,9 @@
 							<!-- end fourth panel -->
 						</div>
 					</div>
-				</div><br>
+				</div>
+				<br>
 				<a class="exit-off-canvas"></a>
-
 			</section>
 		</div>
 	</div>
