@@ -17,7 +17,7 @@ var totalPages = -1;
 */
 $(document).ready(function() {
 	//specifiy document to load
-	doc = PDFJS.getDocument('../files/Marketing_Slideshow.pdf');
+	doc = PDFJS.getDocument('../server/php/files/Marketing_Slideshow.pdf');
 	currentPage = 1;
 	prepareDocument(doc, currentPage);
 
