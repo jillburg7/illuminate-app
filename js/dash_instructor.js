@@ -28,14 +28,88 @@ $("#add-course").click(function() { //anonymous function
 			$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
 		}
 		var name = $('#course-name').val(); //name in field = course name
-		//clear field
-		$('#course-name').val('');
-		$('#createCourseModal').foundation('reveal', 'close');
-		createNewCourse(name);
+		$.ajax({
+			type: 'POST',
+			url: "course_creation.php",
+			data: 'course-name=' + $('#course-name').val(),
+			success: function(msg) {
+				console.log(msg);
+				//clear field
+				$('#course-name').val('');
+				$('#createCourseModal').foundation('reveal', 'close');
+				createNewCourse(name);
+			},
+			error: function(xhr, desc, err) {
+				console.log(xhr);
+				console.log("Details: " + desc + "\nError:" + err);
+			}
+		});
 	} else {
 		// Field is empty: give focus back to the input box
 		$('#course-name').focus();
 	}
+});
+
+/**
+* genious: http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
+*/
+$(document).ready(function () {
+	// variable to hold request
+	var request;
+	// bind to the submit event of our form
+	$("#create_quiz").submit(function(event){
+    // abort any pending request
+    if (request) {
+    	request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+    // let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+    // serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // let's disable the inputs for the duration of the ajax request
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+
+    // fire off the request to /form.php
+    request = $.ajax({
+    	url: "quiz_creation.php",
+    	type: "post",
+    	data: serializedData
+    });
+
+    // callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // log a message to the console
+        console.log("Hooray, it worked!");
+        console.log(response);
+        $("#create_quiz").prepend("<p>Success!</p>");
+      });
+
+    // callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        console.error(
+        	"The following error occured: "+
+        	textStatus, errorThrown
+        	);
+      });
+
+    // callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // reenable the inputs
+        $inputs.prop("disabled", false);
+      });
+
+    // prevent default posting of form
+    event.preventDefault();
+  });
+
+
 });
 
 /* 
@@ -95,42 +169,42 @@ function randomString() {
 * https://github.com/blueimp/jQuery-File-Upload
 */
 function fileChooser() {
-/*jslint unparam: true, regexp: true */
-/*global window, $ */
-$(function () {
-	'use strict';
-	// Change this to the location of your server-side upload handler:
-	var url = '../server/php/',
-	uploadButton = $('<button/>')
+	/*jslint unparam: true, regexp: true */
+	/*global window, $ */
+	$(function () {
+		'use strict';
+		// Change this to the location of your server-side upload handler:
+		var url = '../server/php/',
+		uploadButton = $('<button/>')
 		.addClass("nice-button")
 		.text('Upload file')
 		.on('click', function () {
 			var $this = $(this),
-				data = $this.data();
+			data = $this.data();
 			$this
-				.off('click')
-				.on('click', function () {
-					$this.remove();
-					data.abort();
-				});
-				data.submit().always(function () {
-					$this.remove();
-				});
+			.off('click')
+			.on('click', function () {
+				$this.remove();
+				data.abort();
+			});
+			data.submit().always(function () {
+				$this.remove();
+			});
 		});
 		$('#fileupload').fileupload({
 			url: url,
 			dataType: 'json',
 			autoUpload: false,
-			//acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-		maxFileSize: 5000000, // 5 MB
-		// Enable image resizing, except for Android and Opera,
-		// which actually support image resizing, but fail to
-		// send Blob objects via XHR requests:
-		disableImageResize: /Android(?!.*Chrome)|Opera/
-		.test(window.navigator.userAgent),
-		previewMaxWidth: 100,
-		previewMaxHeight: 100,
-		previewCrop: true
+				//acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+			maxFileSize: 5000000, // 5 MB
+			// Enable image resizing, except for Android and Opera,
+			// which actually support image resizing, but fail to
+			// send Blob objects via XHR requests:
+			disableImageResize: /Android(?!.*Chrome)|Opera/
+			.test(window.navigator.userAgent),
+			previewMaxWidth: 100,
+			previewMaxHeight: 100,
+			previewCrop: true
 		}).on('fileuploadadd', function (e, data) {
 			data.context = $('<div/>').appendTo('#files');
 			$.each(data.files, function (index, file) {

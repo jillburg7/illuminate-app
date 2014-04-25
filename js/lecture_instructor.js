@@ -1,4 +1,3 @@
-
 //Instructor lecture.html stuff below
 //Use data generator to generate student names and questions they ask and then export as 
 //JSON -> which will then be used in the JavaScript regular expression matcher/aggregator
@@ -138,6 +137,9 @@ function status() {
 	});
 }
 
+/**
+* Code 
+*/
 function prepareDocument(doc, num) {
 	//
 	// See README for overview
@@ -220,3 +222,17 @@ function pages() {
 		$(pageCount).html("Page " + currentPage + " of " + totalPages);
 	});
 }
+
+$(document).on('opened', '[data-reveal]', function () {
+	$.ajax({
+    type: 'POST',
+    url: "../php/quizzes.php",
+    success: function (msg) {
+      $('#listQuizzes:last').append(msg);
+    },
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+});

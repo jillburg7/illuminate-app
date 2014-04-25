@@ -79,18 +79,18 @@
 
 							<!-- start second panel -->
 							<div class="content" id="panel2-2">
-								<!-- form content -->
-								<form action="quiz_creation.php" method="POST">
-									<div class="row">
-										<div class="small-12 medium-12 large-12 small-centered columns">
+								<div class="row panel">
+									<div class="small-12 medium-12 large-12 small-centered columns">
+										<!-- form content -->
+										<form id="create_quiz">
 											<div class="row">
 												<div class="small-12 medium-10 large-10 small-centered columns">
 													<h4>Create a New Quiz</h4>
 													<label>Quiz Name
-														<input type="text" name="quiz_id" placeholder="Favorite Color" />
+														<input type="text" id="quiz_id" name="quiz_id" placeholder="Favorite Color" />
 													</label>
 													<label>Question
-														<input type="text" name="question" placeholder="Of the colors below, what is your favorite color?" />
+														<input type="text" id="question" name="question" placeholder="Of the colors below, what is your favorite color?" />
 													</label>
 													<p>Fill in possible answers below. Select the radiobutton next to the correct answer.</p>
 												</div>
@@ -142,14 +142,14 @@
 
 											<div class="row">
 												<div class="small-12 medium-6 large-6 small-centered columns">
-													<button class="nice-button left">Cancel</button>
-													<button type="submit" class="nice-button right">Submit</button>
+													<button id="clear_form" class="nice-button left">Cancel</button>
+													<button id="save_quiz" type="submit" class="nice-button right">Submit</button>
 												</div>
 											</div>
 
-										</div>
+										</form>
 									</div>
-								</form>
+								</div>
 							</div>
 							<!-- end second panel -->
 							
