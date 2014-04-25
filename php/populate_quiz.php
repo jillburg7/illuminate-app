@@ -17,9 +17,7 @@
   $ansB = $row['ans_b'];
   $ansC = $row['ans_c'];
   $ansD = $row['ans_d'];
-  echo $question;
-  echo $ansA;
-  echo $ansB;
-  echo $ansC;
-  echo $ansD;
+  $q = [$question, $ansA, $ansB, $ansC,$ansD];
+
+  echo json_encode($q);
 ?>

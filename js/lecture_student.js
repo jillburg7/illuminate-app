@@ -109,25 +109,23 @@ $(document).ready(function() {
     // prevent default posting of form
     event.preventDefault();
   });
-});
-
-$(document).on('opened', '[data-reveal]', function () {
 	$.ajax({
     type: 'POST',
     url: "../php/populate_quiz.php",
-    success: function (q,a,b,c,d) {
+    dataType: 'json',
+    success: function (q) {
       console.log(q);
-      console.log(a);
-      console.log(b);
-      console.log(c);
-      console.log(d);
+      $("#question").html(q[0]);
+      $("#ansA").append(q[1]);
+      $("#ansB").append(q[2]);
+      $("#ansC").append(q[3]);
+      $("#ansD").append(q[4]);  
     },
     error: function(xhr, desc, err) {
       console.log(xhr);
       console.log("Details: " + desc + "\nError:" + err);
     }
   });
-  
 });
 
 /*
