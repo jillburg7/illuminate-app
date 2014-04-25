@@ -15,28 +15,56 @@ $(document).on('opened', '[data-reveal]', function () {
 	});
 });
 
-/**
-* Submission of new course has been initiated.
-* Text in input field is stored as the name of course,
-*   if empty -> input field gains focus again
-* Calls createNewCourse() to generate HTML and push into course array
-*/
-$("#add-course").click(function() { //anonymous function
-	if ($('#course-name').val() != '') {
-		if(x.length === 0) {
-			//previously had no active courses;
-			$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
-			$(".main-section > .row > .large-12.columns").removeAttr("hidden");
-		}
-		var name = $('#course-name').val();	//name in field = course name
-		$('#course-name').val('');	//clear field
-		$('#addCourseModal').foundation('reveal', 'close');
-		addNewCourse(name);
-		// $('#course-tab-details > .content.active h2').html(name);
-	} else {
-		// Field is empty: give focus back to the input box
-		$('#course-name').focus();
-	}
+
+$(document).ready(function() {
+	var courses_available;
+
+	$.ajax({
+    type: 'POST',
+    url: "addClass.php",
+    success: function (msg) {
+      if (msg !== null) {
+      	courses_available = msg;
+        // addNewCourse(msg);
+        // $("#noCourses").remove(); 
+        console.log(msg);
+      }
+    },
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+
+	/**
+	* Submission of new course has been initiated.
+	* Text in input field is stored as the name of course,
+	*   if empty -> input field gains focus again
+	* Calls createNewCourse() to generate HTML and push into course array
+	*/
+	$("#add-course").click(function() { //anonymous function
+		// if ($('#course-name').val() != '') {
+			if(x.length === 0) {
+				//previously had no active courses;
+				$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
+				$(".main-section > .row > .large-12.columns").removeAttr("hidden");
+			}
+			var name = $('#course-name').val();	//name in field = course name
+			$('#course-name').val('');	//clear field
+			$('#addCourseModal').foundation('reveal', 'close');
+			if (name === courses_available){
+				$("#noCourses").remove(); 
+				addNewCourse(name);
+			} else {
+				$("#noCourses").prepend('Not a valid course, please enter code again.')
+			}
+			// $('#course-tab-details > .content.active h2').html(name);
+		// } else {
+			// Field is empty: give focus back to the input box
+			// $('#course-name').focus();
+		// }
+	});
+
 });
 
 /* 

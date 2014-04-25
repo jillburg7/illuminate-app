@@ -87,7 +87,6 @@ $(document).ready(function() {
         // log a message to the console
         console.log("Hooray, it worked!");
         console.log(response);
-        $("#create_quiz").prepend("<p>Success!</p>");
       });
 
     // callback handler that will be called on failure
@@ -126,6 +125,11 @@ $(document).ready(function() {
       console.log("Details: " + desc + "\nError:" + err);
     }
   });
+});
+
+$("#quiz").submit(function(event){
+    // prevent default posting of form
+    event.preventDefault();
 });
 
 /*

@@ -9,8 +9,13 @@
 
   $result = mysqli_query($con,"SELECT * FROM `UserDashBoard` WHERE `userID`='$user'");
 
+  // $courses = array();
+
   while($row = mysqli_fetch_array($result)) {
-    echo "<p>" . $row['classCode'] . "</p>";
+    // array_push($courses,$row['classCode']);
+    echo $row['classCode'];
+
   }
+   // echo json_encode($courses);
 
 ?>

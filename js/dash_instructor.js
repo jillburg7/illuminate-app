@@ -86,7 +86,9 @@ $(document).ready(function () {
         // log a message to the console
         console.log("Hooray, it worked!");
         console.log(response);
-        $("#create_quiz").prepend("<p>Success!</p>");
+        $(document).on('open.fndtn.alert-box', function(event) {
+          console.info('An alert box has been opened!');
+        });
       });
 
     // callback handler that will be called on failure
@@ -113,8 +115,12 @@ $(document).ready(function () {
     type: 'POST',
     url: "../php/show_courses.php",
     success: function (msg) {
-      $('#panel2-1').html(msg);
-      console.log(msg);
+      // $('#panel2-1').html(msg);
+      if (msg !== null) {
+        createNewCourse(msg);
+        $("#noCourses").remove(); 
+        console.log(msg);
+      }
     },
     error: function(xhr, desc, err) {
       console.log(xhr);
