@@ -112,6 +112,27 @@ $(document).ready(function() {
 			pages();
 		}
 	});
+
+	var path = '../server/php/files/';
+	$.ajax({
+    type: 'POST',
+    url: "../php/files_uploaded.php",
+    success: function (msg) {
+      $("#content").html(msg);
+    },
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+  $("#content > li > a").click(function(){
+  	var file = $("#content > li > a").html();
+  	// console.log(file);
+  	// console.log(""+path + "" + file);
+  	doc = PDFJS.getDocument(path + file);
+		currentPage = 1;
+		prepareDocument(doc, currentPage);
+  });
 });
 
 /*
