@@ -109,6 +109,23 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
+	$.ajax({
+    type: 'POST',
+    url: "../php/show_courses.php",
+    success: function (msg) {
+      $('#panel2-1').html(msg);
+      console.log(msg);
+    },
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
+
+  $("#clear_form").click(function() { 
+    // var $form = $(this);
+  	// $form.reset(); 
+  });
 
 });
 

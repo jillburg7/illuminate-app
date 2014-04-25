@@ -5,10 +5,12 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $result = mysqli_query($con,"SELECT * FROM quiz");
+  $user = 'jiggz@jillian.com';
+
+  $result = mysqli_query($con,"SELECT * FROM `UserDashBoard` WHERE `userID`='$user'");
 
   while($row = mysqli_fetch_array($result)) {
-    echo "<p><a>" . $row['quizID'] . "</a></p>";
+    echo "<p>" . $row['classCode'] . "</p>";
   }
 
 ?>

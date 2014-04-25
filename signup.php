@@ -6,10 +6,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$sql="INSERT INTO CreateLogin (userID, email, password, type, firstName, lastName, studentID)
-
-VALUES
-(null,'$_POST[email]', '$_POST[password1]', '$_POST[userType]','$_POST[firstname]','$_POST[lastname]', $_POST[studentID])";
+$sql="INSERT INTO CreateLogin (userID, email, password, type, firstName, lastName, studentID) VALUES (null,'$_POST[email]', '$_POST[password1]', '$_POST[userType]','$_POST[firstname]','$_POST[lastname]', $_POST[studentID])";
 
 if (!mysqli_query($con,$sql))
   {
