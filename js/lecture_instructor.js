@@ -127,9 +127,6 @@ $(document).ready(function() {
   });
   $("#content > li > a").click(function(){
   	var file = $("#content > li > a").html();
-  	// console.log(file);
-  	// console.log(""+path + "" + file);
-  	doc = PDFJS.getDocument(path + file);
 		currentPage = 1;
 		prepareDocument(doc, currentPage);
   });
