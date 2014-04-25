@@ -43,26 +43,27 @@ $(document).ready(function() {
 	* Calls createNewCourse() to generate HTML and push into course array
 	*/
 	$("#add-course").click(function() { //anonymous function
-		// if ($('#course-name').val() != '') {
-			if(x.length === 0) {
-				//previously had no active courses;
-				$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
-				$(".main-section > .row > .large-12.columns").removeAttr("hidden");
-			}
+		if ($('#course-name').val() != '') {
 			var name = $('#course-name').val();	//name in field = course name
 			$('#course-name').val('');	//clear field
 			$('#addCourseModal').foundation('reveal', 'close');
 			if (name === courses_available){
-				$("#noCourses").remove(); 
+				if(x.length === 0) {
+					//previously had no active courses;
+					$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
+					$(".main-section > .row > .large-12.columns").removeAttr("hidden");
+				}
+			
+				// $("#noCourses").remove(); 
 				addNewCourse(name);
 			} else {
-				$("#noCourses").prepend('Not a valid course, please enter code again.')
+				$("#noCourses").prepend('<p style="text-align: center;">Not a valid course, please enter code again.</p><hr/>');
 			}
 			// $('#course-tab-details > .content.active h2').html(name);
-		// } else {
-			// Field is empty: give focus back to the input box
-			// $('#course-name').focus();
-		// }
+		} else {
+			//Field is empty: give focus back to the input box
+			$('#course-name').focus();
+		}
 	});
 
 });
@@ -96,7 +97,7 @@ var addNewCourse = function(cname) {
 			$(content).addClass("active");
 		}
 		var course_id = '#' + id; 
-		$(tab).html('<a href="' + course_id + '">Course ID</a>');	
+		$(tab).html('<a href="' + course_id + '">'+ cname +'</a>');	
 		$(tab).appendTo('#course-tab-titles');
 
 		$(content).prop("id", id);
