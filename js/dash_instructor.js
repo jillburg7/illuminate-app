@@ -114,10 +114,12 @@ $(document).ready(function () {
 	$.ajax({
     type: 'POST',
     url: "../php/show_courses.php",
+    dataType: 'json',
     success: function (msg) {
-      // $('#panel2-1').html(msg);
       if (msg !== null) {
-        createNewCourse(msg);
+        for (var i = 0; i <msg.length; i++) { 
+          createNewCourse(msg[i]);
+        }        
         $("#noCourses").remove(); 
         console.log(msg);
       }

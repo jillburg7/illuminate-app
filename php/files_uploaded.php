@@ -6,9 +6,9 @@
   }
 
   $result = mysqli_query($con,"SELECT * FROM `files`");
-  $i=0;
+
   while($row = mysqli_fetch_array($result)) {
-    echo "<li><a id='". $i++ ."'>" . $row['name'] . "</a></li>";
+    echo "<li><a>" . $row['name'] . "</a></li>";
   }
 
 ?>

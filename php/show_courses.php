@@ -5,17 +5,16 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $user = 'jiggz@jillian.com';
+  $user = 'jiggz@jillian.com';  
 
   $result = mysqli_query($con,"SELECT * FROM `UserDashBoard` WHERE `userID`='$user'");
 
-  // $courses = array();
-
+  $courses = array();
+  
   while($row = mysqli_fetch_array($result)) {
-    // array_push($courses,$row['classCode']);
-    echo $row['classCode'];
-
+    $courses[] = $row['classCode'];
   }
-   // echo json_encode($courses);
+
+  echo json_encode($courses);
 
 ?>

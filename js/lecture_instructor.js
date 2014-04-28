@@ -6,6 +6,7 @@
 var doc;
 var currentPage; //holds current page number
 var totalPages = -1;
+var path = '../server/php/files/';
 
 /** 
 * The Idea:
@@ -19,6 +20,18 @@ $(document).ready(function() {
 	doc = PDFJS.getDocument('../server/php/files/Marketing_Slideshow.pdf');
 	currentPage = 1;
 	prepareDocument(doc, currentPage);
+
+	$.ajax({
+    type: 'POST',
+    url: "../php/files_uploaded.php",
+    success: function (msg) {
+      $("#content").html(msg);
+    },
+    error: function(xhr, desc, err) {
+      console.log(xhr);
+      console.log("Details: " + desc + "\nError:" + err);
+    }
+  });
 
 	$.getJSON('../test-data.json', function(data) {
 		var output = '<ul class="incoming">';
@@ -113,20 +126,10 @@ $(document).ready(function() {
 		}
 	});
 
-	var path = '../server/php/files/';
-	$.ajax({
-    type: 'POST',
-    url: "../php/files_uploaded.php",
-    success: function (msg) {
-      $("#content").html(msg);
-    },
-    error: function(xhr, desc, err) {
-      console.log(xhr);
-      console.log("Details: " + desc + "\nError:" + err);
-    }
-  });
-  $("#content > li > a").click(function(){
-  	var file = $("#content > li > a").html();
+  $("#content a").click(function(){
+  	var file = $(this).html();
+  	file = path + file;
+  	doc = PDFJS.getDocument(file);
 		currentPage = 1;
 		prepareDocument(doc, currentPage);
   });

@@ -108,6 +108,8 @@ $(document).ready(function() {
     // prevent default posting of form
     event.preventDefault();
   });
+
+//database call to populate quiz with Q&A data
 	$.ajax({
     type: 'POST',
     url: "../php/populate_quiz.php",
