@@ -24,8 +24,13 @@ $(document).ready(function() {
 	$.ajax({
     type: 'POST',
     url: "../php/files_uploaded.php",
+    dataType: 'json',
     success: function (msg) {
-      $("#content").html(msg);
+    	if (msg !== null) {
+        for (var i = 0; i <msg.length; i++) {
+	      	$("#content").html("<li><a id='file"+ i +"''>" + msg[i] + "</a></li>");
+	      }
+    	}
     },
     error: function(xhr, desc, err) {
       console.log(xhr);
