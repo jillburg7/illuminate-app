@@ -28,7 +28,7 @@ $(document).ready(function() {
     success: function (msg) {
     	if (msg !== null) {
         for (var i = 0; i <msg.length; i++) {
-	      	$("#content").html("<li><a id='file"+ i +"''>" + msg[i] + "</a></li>");
+	      	$("#content").html("<li><a id='file"+ i +"'>" + msg[i] + "</a></li>");
 	      }
     	}
     },
@@ -132,6 +132,8 @@ $(document).ready(function() {
 	});
 
   $("#content a").click(function(){
+  //$("#file0").click(function(){
+  	console.log("i was clicked!");
   	var file = $(this).html();
   	file = path + file;
   	doc = PDFJS.getDocument(file);

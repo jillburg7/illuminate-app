@@ -14,15 +14,4 @@
     echo $row['classCode'];
   }
 
-// $sql="INSERT INTO UserDashBoard (ID, userID, classCode)
-// VALUES
-// (null,'$_POST[userID]', '$_POST[courseCode]')";
-
-// if (!mysqli_query($con,$sql))
-//   {
-//   die('Error: ' . mysqli_error($con));
-//   }
-// echo include 'dashboard.html';
-// mysqli_close($con);
-
 ?>

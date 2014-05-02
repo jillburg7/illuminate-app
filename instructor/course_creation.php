@@ -8,7 +8,8 @@ if (mysqli_connect_errno()) {
 if ($_POST['course-name']) :
   $course = $_POST['course-name'];
   $user = 'jiggz@jillian.com';
-  $sql = "INSERT INTO `UserDashBoard`(`id`, `userID`, `classCode`) VALUES (null,'$user','$course')";
+  $code = $_POST['classcode'];
+  $sql = "INSERT INTO `UserDashBoard`(`id`, `userID`, `classCode`, `className`) VALUES (null,'$user', '$code', '$course')";
 
   if (!mysqli_query($con,$sql)) {
     die('Error: ' . mysqli_error($con));
