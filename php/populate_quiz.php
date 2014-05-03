@@ -5,7 +5,7 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $quiz = 'Devices';  //$_POST['quiz_id'];
+  $quiz = 'Equation';  //$_POST['quiz_id'];
 
    $result = mysqli_query($con,"SELECT * FROM `quiz` WHERE `quizID`='$quiz'");
 

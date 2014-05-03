@@ -23,7 +23,7 @@ $(document).on('opened', '[data-reveal]', function () {
 */
 $("#add-course").click(function() { //anonymous function
 	if ($('#course-name').val() != '') {
-		if(x.length === 0) {
+		if(x.length != 0) {
 			//previously had no active courses;
 			$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
 		}
