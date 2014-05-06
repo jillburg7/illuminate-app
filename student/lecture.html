@@ -115,7 +115,7 @@
 					<!-- end #lecture content -->
 
 					<!-- Modal fly-in/pop-up thingy-->
-					<div id="askQuestionModal" class="small reveal-modal" data-reveal>
+					<div id="askQuestionModal" class=" reveal-modal" data-reveal>
 						<form action="#" method="POST">
 							<h4>Ask a Question?</h4>
 							<textarea id="question-m" placeholder="Enter question here..."></textarea>
@@ -140,7 +140,7 @@
 							<!-- multiple-choice: answer A -->
 							<div class="row">
 								<div class="small-12 medium-12 large-12 columns quiz">
-									<input type="radio" name="quiz" value="A" id="answerA" checked/>
+									<input type="radio" name="quiz_ans" value="A" id="answerA" />
 									<label for="answerA" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
 										<p id="ansA"><span>A.  </span></p>
 									</label>
@@ -150,7 +150,7 @@
 							<!-- multiple-choice: answer B -->
 							<div class="row">
 								<div class="small-12 medium-12 large-12 columns quiz">
-									<input type="radio" name="quiz" value="B" id="answerB" />
+									<input type="radio" name="quiz_ans" value="B" id="answerB" />
 									<label for="answerB" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
 										<p id="ansB"><span>B.  </span></p>
 									</label>
@@ -160,7 +160,7 @@
 							<!-- multiple-choice: answer C -->
 							<div class="row">
 								<div class="small-12 medium-12 large-12 columns quiz">
-									<input type="radio" name="quiz" value="C" id="answerC" />
+									<input type="radio" name="quiz_ans" value="C" id="answerC" />
 									<label for="answerC" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
 										<p id="ansC"><span>C.  </span></p>
 									</label>
@@ -170,7 +170,7 @@
 							<!-- multiple-choice: answer D -->
 							<div class="row">
 								<div class="small-12 medium-12 large-12 columns quiz">
-									<input type="radio" name="quiz" value="D" id="answerD" />
+									<input type="radio" name="quiz_ans" value="D" id="answerD" />
 									<label for="answerD" style="margin-right: 0px; margin-left: 2px; padding: 0px;">
 										<p id="ansD"><span>D.  </span></p>
 									</label>
@@ -178,7 +178,7 @@
 							</div>
 
 							<br>
-							<button class="nice-button left">Clear</button>
+							<button type="button" class="nice-button left">Clear</button>
 							<button type="submit" class="nice-button right">Submit</button>
 
 						</form>

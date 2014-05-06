@@ -52,65 +52,8 @@ $(document).ready(function() {
 		}
 	});
 
-	/**
-	* genious: http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
-	*/
-	// variable to hold request
-	var request;
-	// bind to the submit event of our form
-	$("#create_quiz").submit(function(event){
-    // abort any pending request
-    if (request) {
-    	request.abort();
-    }
-    // setup some local variables
-    var $form = $(this);
-    // let's select and cache all the fields
-    var $inputs = $form.find("input, select, button, textarea");
-    // serialize the data in the form
-    var serializedData = $form.serialize();
-
-    // let's disable the inputs for the duration of the ajax request
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
-
-    // fire off the request to /form.php
-    request = $.ajax({
-    	url: "quiz_creation.php",
-    	type: "post",
-    	data: serializedData
-    });
-
-    // callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // log a message to the console
-        console.log("Hooray, it worked!");
-        console.log(response);
-      });
-
-    // callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // log the error to the console
-        console.error(
-        	"The following error occured: "+
-        	textStatus, errorThrown
-        	);
-      });
-
-    // callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // reenable the inputs
-        $inputs.prop("disabled", false);
-      });
-
-    // prevent default posting of form
-    event.preventDefault();
-  });
-
-//database call to populate quiz with Q&A data
-	$.ajax({
+  //database call to populate quiz with Q&A data
+  $.ajax({
     type: 'POST',
     url: "../php/populate_quiz.php",
     dataType: 'json',
@@ -126,6 +69,67 @@ $(document).ready(function() {
       console.log(xhr);
       console.log("Details: " + desc + "\nError:" + err);
     }
+  });
+
+	/**
+	* genious: http://stackoverflow.com/questions/5004233/jquery-ajax-post-example-with-php
+	*/
+  // variable to hold request
+  var request;
+  // bind to the submit event of our form
+  $("#quiz").submit(function(event){
+    // abort any pending request
+    if (request) {
+      request.abort();
+    }
+    // setup some local variables
+    var $form = $(this);
+    // let's select and cache all the fields
+    var $inputs = $form.find("input, select, button, textarea");
+    // serialize the data in the form
+    var serializedData = $form.serialize();
+
+    // let's disable the inputs for the duration of the ajax request
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    $inputs.prop("disabled", true);
+
+    // fire off the request to /form.php
+    request = $.ajax({
+      url: "../php/quiz_answers.php",
+      type: "post",
+      data: serializedData
+    });
+
+    // callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        $form.prepend('<div data-alert class="alert-box success radius">Your quiz has been accepted!<a href="#" class="close">&times;</a></div>');
+        // log a message to the console
+        console.log("Hooray, it worked!");
+        console.log(response);
+        $form.each(function() {
+          this.reset();
+        });
+      });
+
+    // callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // log the error to the console
+        console.error(
+          "The following error occured: "+
+          textStatus, errorThrown
+          );
+      });
+
+    // callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // reenable the inputs
+        $inputs.prop("disabled", false);
+      });
+
+    // prevent default posting of form
+    event.preventDefault();
   });
 });
 

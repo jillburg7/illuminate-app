@@ -23,7 +23,7 @@ $(document).on('opened', '[data-reveal]', function () {
 */
 $("#add-course").click(function() { //anonymous function
 	if ($('#course-name').val() != '') {
-		if(x.length != 0) {
+		if(x.length === 0) {
 			//previously had no active courses;
 			$("#noCourses").remove(); //now we have 1 so we remove irrelevent content
 		}
@@ -84,11 +84,11 @@ $(document).ready(function () {
 
     // callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
-        $form.prepend('<div data-alert class="alert-box success radius">This is a success alert with a radius.<a href="#" class="close">&times;</a></div>');
+        $form.prepend('<div data-alert class="alert-box success radius">Your quiz has been saved!<a href="#" class="close">&times;</a></div>');
         // log a message to the console
         console.log("Hooray, it worked!");
         console.log(response);
-        $form.each(function(){
+        $form.each(function() {
           this.reset();
         });
       });

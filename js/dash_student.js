@@ -57,7 +57,7 @@ $(document).ready(function() {
 				// $("#noCourses").remove(); 
 				addNewCourse(name);
 			} else {
-				$("#noCourses").prepend('<p style="text-align: center;">Not a valid course, please enter code again.</p><hr/>');
+				$("#noCourses").before('<p style="text-align: center;">Not a valid course, please enter code again.</p><hr/>');
 			}
 			// $('#course-tab-details > .content.active h2').html(name);
 		} else {
