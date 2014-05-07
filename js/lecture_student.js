@@ -68,7 +68,7 @@ $(document).ready(function() {
     error: function(xhr, desc, err) {
       console.log(xhr);
       console.log("Details: " + desc + "\nError:" + err);
-    }
+    }        
   });
 
 	/**
@@ -103,10 +103,10 @@ $(document).ready(function() {
 
     // callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
-        $form.prepend('<div data-alert class="alert-box success radius">Your quiz has been accepted!<a href="#" class="close">&times;</a></div>');
+        $('#answerQuizModal').foundation('reveal', 'close');
+        $('#lecture').prepend('<div data-alert class="alert-box success radius">Your quiz has been accepted!<a href="#" class="close">&times;</a></div>');
         // log a message to the console
         console.log("Hooray, it worked!");
-        console.log(response);
         $form.each(function() {
           this.reset();
         });
@@ -128,14 +128,15 @@ $(document).ready(function() {
         $inputs.prop("disabled", false);
       });
 
-    // prevent default posting of form
-    event.preventDefault();
-  });
-});
+    $('#clear').click(function() {
+      $form.each(function() {
+        this.reset();
+      });
+    });
 
-$("#quiz").submit(function(event){
     // prevent default posting of form
-    event.preventDefault();
+      event.preventDefault();
+  });
 });
 
 /*
