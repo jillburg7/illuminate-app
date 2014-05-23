@@ -18,5 +18,6 @@ The projects current state is **in development** with many features in their beg
 - Internet Explorer IE9+ *
 - iOS v6.0+ *
 - Android v4.0+ *
-- Opera v12.0+ 
-**some features may be limited in earlier versions*
+- Opera v12.0+
+
+_*some features may be limited in earlier versions of browsers_
