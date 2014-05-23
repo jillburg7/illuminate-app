@@ -1,10 +1,8 @@
+// instructor dashboard
 
-// var selected_file = $('#input').get(0).files[0];
-
-// $(document).on('open.fndtn.alert-box', function(event) {
-//  console.info('An alert box has been open!');
-// });
-var x = [];
+// stores courses created in order to keep track of them and not exceed the current
+// limit of FIVE courses
+var x = []; 
 
 //focuses input field in modal to create a new course
 $(document).on('opened', '[data-reveal]', function () {

@@ -1,13 +1,18 @@
 <?php
-$con=mysqli_connect("localhost","root","root","Illuminate");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+/**
+* All form inputs are stored into their respective database cells.
+*/
 
-// you can access the values posted by jQuery.ajax
-// through the global variable $_POST, like this:
-// $bar = $_POST['bar'];
+  $con=mysqli_connect("localhost","root","root","Illuminate");
+  // Check connection
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  // help from the internets:
+  // you can access the values posted by jQuery.ajax
+  // through the global variable $_POST, like this:
+  // $bar = $_POST['bar'];
 
   $quizid = $_POST['quiz_id'];
   $q = $_POST['question'];

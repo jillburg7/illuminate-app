@@ -1,13 +1,20 @@
 <?php
-$con=mysqli_connect("localhost","root","root","Illuminate");
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+/**
+* Inserts a student's quiz response into the database table.
+* NEEDS development work !!
+*/
 
-$quizid = 'Equation'; //$_POST['quiz_id'];
-$user = 'jill@jillian.com';
-$answer = $_POST['quiz_ans'];
+  $con=mysqli_connect("localhost","root","root","Illuminate");
+  // Check connection
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  // HARDCODED! -- should be quiz_id
+  $quizid = 'Equation'; //$_POST['quiz_id'];
+  // HARDCODED! -- should be the userID of the student that submitted a response to a quiz question
+  $user = 'user@example.com'; 
+  $answer = $_POST['quiz_ans'];
 
   $sql = "INSERT INTO `quiz_response`(`id`, `quizID`, `userID`, `student_ans`) VALUES (null, '$quizid', '$user', '$answer')";
 

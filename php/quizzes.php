@@ -1,4 +1,10 @@
 <?php
+/**
+* Searches for all of the quizzes in database;
+* NEEDS development work to specify what quizzes would be relevant to the
+* instructor polling the quizzes.
+*/
+
   $con=mysqli_connect("localhost","root","root","Illuminate");
   // Check connection
   if (mysqli_connect_errno()) {

@@ -1,10 +1,16 @@
 <?php
+/**
+* Hack on user authentication for prototype presentation purposes.
+* NEEDS development work to set up authentication and sessions!!
+*/
+
 	$con=mysqli_connect("localhost","root","root","Illuminate");
 	// Check connection
 	if (mysqli_connect_errno()) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-	$type = -1;
+
+	$type = -1; // type of user must be 0 (student) or 1 (instructor)
 
 	$result = mysqli_query($con,"SELECT * FROM CreateLogin WHERE email='$_POST[email]'");
 
@@ -28,6 +34,6 @@
 	}
 	else {
 		echo header('Location: /index.html');
-		//display error on page!
+		//display error on page!.....
 	}
 ?>

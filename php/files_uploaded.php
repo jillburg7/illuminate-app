@@ -1,4 +1,9 @@
 <?php
+/**
+* Lists all of the files uploaded (in the /server/ directory).
+* Needs development work.
+*/
+
   $con=mysqli_connect("localhost","root","root","Illuminate");
   // Check connection
   if (mysqli_connect_errno()) {
@@ -10,7 +15,6 @@
   $files = array();
 
   while($row = mysqli_fetch_array($result)) {
-    // echo "<li><a>" . $row['name'] . "</a></li>";
     $files[] = $row['name'];
   }
 

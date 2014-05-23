@@ -1,6 +1,4 @@
 //Instructor lecture.html stuff below
-//Use data generator to generate student names and questions they ask and then export as 
-//JSON -> which will then be used in the JavaScript regular expression matcher/aggregator
 
 //globals:
 var doc;
